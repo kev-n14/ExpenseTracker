@@ -1,0 +1,24 @@
+{
+  "name": "expensetracker",
+  "version": "1.0.0",
+  "description": "![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwind build /workspace/ExpenseTracker/static/css/src.css -o /workspace/ExpenseTracker/static/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kev-n14/ExpenseTracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kev-n14/ExpenseTracker/issues"
+  },
+  "homepage": "https://github.com/kev-n14/ExpenseTracker#readme",
+  "dependencies": {
+    "tailwindcss": "^2.2.16"
+  }
+}
