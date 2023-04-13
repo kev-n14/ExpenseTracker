@@ -1,4 +1,5 @@
 {% extends "expenseapp/base.html" %}
+{% load humanize %}
 {%block content %}
 <div class="m-10 font-bold text-white text-2xl">
     Add Expenses <i class="fa-solid fa-plus"></i>
@@ -52,7 +53,7 @@
     {% for expense in expenses %}
     <div class="expense-row flex flex-wrap px-20 py-5 text-white">
         <span class="font-bold rounded-full">{{ expense.name }}</span>
-        <span class="font-bold">{{ expense.amount }}</span>
+        <span class="font-bold">€{{ expense.amount }}</span>
         <span class="font-bold">{{ expense.date }}</span>
         <span class="font-bold">{{ expense.category }}</span>
         <span class="font-bold"><a href="{% url 'edit' expense.id %}"
@@ -72,6 +73,13 @@
 
     </div>
     {% endfor%}
+    <!--Displaying Total-->
+    <div class="px-72 py-5">
+        <span class="font-bold text-green-500">
+            Total : €{{ total_expenses.amount__sum}}
+        </span>
+    </div>
+    <!--Displaying Total-->
 </div>
 
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ExpenseForm
 from .models import Expenses
+from django.db.models import Sum
 
 
 def index(request):
@@ -9,8 +10,12 @@ def index(request):
         if expense.is_valid():
             expense.save()
     expenses = Expenses.objects.all()
+    total_expenses = expenses.aggregate(Sum('amount'))
+    print(total_expenses)
     expense_form = ExpenseForm()
-    return render(request, 'expenseapp/index.html', {'expense_form':expense_form, 'expenses':expenses})
+
+    return render(request, 'expenseapp/index.html', 
+    {'expense_form':expense_form, 'expenses':expenses, 'total_expenses':total_expenses})
 
 
 def edit(request, id):
