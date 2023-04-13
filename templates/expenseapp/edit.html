@@ -1,0 +1,35 @@
+{% extends "expenseapp/base.html" %}
+{%block content %}
+<h1>This edit page</h1>
+<form method="POST" class="shadow-lg m-10">
+    {% csrf_token %}
+    <div class="px-10 py-10 flex">
+        <div class="mx-10">
+            <div class="mb-5">
+                <label class="font-semibold">Expense Name</label>
+            </div>
+            <div class="border p-1">{{ expense_form.name }}</div>
+        </div>
+        <div class="mx-10">
+            <div class="mb-5">
+                <label class="font-semibold">Expense Amount</label>
+            </div>
+            <div class="border p-1">{{ expense_form.amount }}</div>
+        </div>
+        <div class="mx-10">
+            <div class="mb-5">
+                <label class="font-semibold">Expense category</label>
+            </div>
+            <div class="border p-1">{{ expense_form.category }}</div>
+        </div>
+        <div class="px-10 py-10">
+            <button class="bg-green-500 px-5 py-2 rounded-lg text-white font-bold" type="submit">Update</button>
+        </div>
+    </div>
+
+
+
+
+
+</form>
+{% endblock %}
