@@ -36,9 +36,26 @@
 <div>
     Expenses
 </div>
-{% for expense in expenses %}
-{{ expense.name }}
-{{ expense.amount }}
-{{ expense.category }}
-{{ expense.date }}
+<div class="shadow-lg m-10 rounded-lg">
+    <div class="expense-header flex flex-wrap space-x-40">
+        <span>Name</span>
+        <span>Amount</span>
+        <span>Date</span>
+        <span>Category</span>
+        <span>Edit</span>
+        <span>Delete</span>
+    </div>
+    <hr class="m-8">
+    {% for expense in expenses %}
+    <div class="expense-row flex flex-wrap px-20 py-5">
+        <span class="font-bold">{{ expense.name }}</span>
+        <span class="font-bold">{{ expense.amount }}</span>
+        <span class="font-bold">{{ expense.date }}</span>
+        <span class="font-bold">{{ expense.category }}</span>
+        <span class="font-bold"><a href="">Edit</a></span>
+        <span class="font-bold"><a href="">Delete</a></span>
+    </div>
+    {% endfor%}
+</div>
+
 {% endblock %}
