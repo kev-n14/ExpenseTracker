@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 from .forms import ExpenseForm, CreateUserForm
 from .models import Expenses
 from django.db.models import Sum
@@ -13,14 +15,32 @@ def registerPage(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, 'Account was created for '+ user)
+
             return redirect('login')
 
-    context={'form':form}
+    context = {'form': form}
     return render(request, 'expenseapp/register.html', context)
 
 
 def loginPage(request):
-    context={}
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        print(user)
+        if user is not None:
+            login(request, user)
+            
+            return redirect('index')
+
+        else:
+            messages.info(request, 'Username or Password is incorrect')
+
+    context = {}
+    
     return render(request, 'expenseapp/login.html', context)
 
 
