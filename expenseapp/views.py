@@ -1,8 +1,27 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import ExpenseForm
+from django.contrib.auth.forms import UserCreationForm
+from .forms import ExpenseForm, CreateUserForm
 from .models import Expenses
 from django.db.models import Sum
 import datetime
+
+
+def registerPage(request):
+    form = CreateUserForm()
+
+    if request.method == "POST":
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+
+    context={'form':form}
+    return render(request, 'expenseapp/register.html', context)
+
+
+def loginPage(request):
+    context={}
+    return render(request, 'expenseapp/login.html', context)
 
 
 def index(request):
@@ -12,7 +31,6 @@ def index(request):
             expense.save()
     expenses = Expenses.objects.all()
     total_expenses = expenses.aggregate(Sum('amount'))
-    
 
     #Logic to calculate 365 days expenses
     last_year = datetime.date.today() - datetime.timedelta(days=365)

@@ -7,4 +7,7 @@ urlpatterns = [
     path('index', views.index, name='index'),
     path('edit/<int:id>/', views.edit, name='edit'),
     path('delete/<int:id>/', views.delete, name='delete'),
+
+    path('register/', views.registerPage, name="register"),
+    path('login/', views.loginPage, name="login"),
 ]
