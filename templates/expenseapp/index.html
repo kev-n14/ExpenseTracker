@@ -74,9 +74,11 @@
     </div>
     {% endfor%}
     <!--Displaying Total-->
-    <div class="px-72 py-5">
-        <span class="font-bold text-green-500">
-            Total : €{{ total_expenses.amount__sum|intcomma }}
+    <hr class="white">
+    <div class=" px-20 py-5">
+        <h3 class="font-bold text-white text-xl">Total :</h3>
+        <span class="font-bold text-white text-center text-xl">
+            €{{ total_expenses.amount__sum|intcomma }}
         </span>
     </div>
     <!--Displaying Total-->
@@ -100,54 +102,60 @@
 
 <div class="flex">
     <div class="w-1/2 shadow-lg m-10">
-        <div class="flex flex-wrap space-x-40 font-bold px-20 py-5">
+        <div class="flex flex-wrap space-x-40 font-bold px-20 py-5 text-green-400">
             <span>Past 30 Days Sum Expenses</span>
         </div>
         <hr>
         <div id="30-day-table">
             {% for daily_sum in daily_sums %}
-            <div class="flex flex-wrap px-20 py-5">
+            <div class="flex flex-wrap px-20 py-5 font-bold  text-white ">
                 <span>
                     {{daily_sum.date}}
                 </span>
             </div>
-            <div class="flex flex-wrap px-20 py-5">
+
+            <div class="flex flex-wrap px-20 py-5 font-bold">
                 <span class="text-white">
-                    €{{daily_sum.sum|intcomma}}
+                    €{{daily_sum.sum}}
                 </span>
             </div>
+            <hr>
             {% endfor %}
         </div>
     </div>
 
     <div class="w-1/2 shadow-lg m-10">
-        <div class="flex flex-wrap space-x-40 font-bold px-20 py-5">
+        <div class="flex flex-wrap space-x-40 font-bold px-20 py-5 text-green-400">
             <span>Categorical Expenses</span>
         </div>
         <hr>
         <div id="category-sum-table">
             {% for categorical_sum in categorical_sums %}
-            <div class="flex flex-wrap px-20 py-5">
+            <div class="flex flex-wrap px-20 py-5 font-bold  text-white">
                 <span>
                     {{categorical_sum.category}}
                 </span>
             </div>
-            <div class="flex flex-wrap px-20 py-5">
+            <div class="flex flex-wrap px-20 py-5 font-bold  text-white">
                 <span class="text-white">
                     €{{categorical_sum.sum}}
                 </span>
             </div>
+            <hr>
             {% endfor %}
         </div>
     </div>
 </div>
 <div class="flex">
-    <div class="w-1/2 shadow-lg ml-10">
+    <div class="w-1/2 shadow-lg ml-10 bg-gray-100">
         <h1 class="m-10">Expense across categories</h1>
         <canvas id="myChart" class="m-10"></canvas>
 
     </div>
-    <div class="w-1/2 shadow-lg ml-10">
+    <div class="w-1/2 shadow-lg ml-10 bg-gray-100">
+        <h1 class="m-10">Daily Expenses</h1>
+        <canvas id="chartDaily" class="m-10"></canvas>
+
 
     </div>
 </div>
@@ -156,6 +164,9 @@
 <script>
     const categoryies = []
     const categories_sums = []
+
+    const dates = []
+    const sum = []
 
     const categorySum = document.getElementById('category-sum-table').getElementsByTagName('div');
 
@@ -167,7 +178,18 @@
             categoryies.push(categorySum[i].innerText)
         }
     }
-    console.log(categorySum)
+
+    const dailySum = document.getElementById('30-day-table').getElementsByTagName('div');
+
+    for (i = 0; i < dailySum.length; i++) {
+        if (i % 2 == 1) {
+            sum.push(dailySum[i].innerText.replace("€", ""))
+
+        } else {
+            dates.push(dailySum[i].innerText)
+        }
+    }
+
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
@@ -176,6 +198,42 @@
             datasets: [{
                 label: 'Expenses By Categories',
                 data: categories_sums,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var ctxDaily = document.getElementById('chartDaily').getContext('2d');
+    var myChart = new Chart(ctxDaily, {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Expenses By Date',
+                data: sum,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
