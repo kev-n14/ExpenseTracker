@@ -1,19 +1,21 @@
 {% extends "expenseapp/base.html" %}
 {%block content %}
 
-<h1> Login</h1>
-<div
-    class="block max-w-sm rounded-lg bg-white p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-    <form method="POST" action="">
+
+<div class=" bg-purple-400 m-auto justify-center shadow-lg m-20 rounded-lg form-container px-10 py-10 max-w-min my-6">
+    <div class="justify-center flex">
+        <h1 class="text-white font-bold text-3xl pb-5"> Login </h1>
+    </div>
+    <form method="POST" action="" class="justify-center min-h-auto">
         {% csrf_token %}
         <!--Username input-->
         <div class="relative mb-6" data-te-input-wrapper-init>
-            <input type="text" name="username" placeholder="Username..." class="form-control" />
+            <input type="text" name="username" placeholder=" Username..." class="form-control rounded  h-8" />
         </div>
 
         <!--Password input-->
         <div class="relative mb-6" data-te-input-wrapper-init>
-            <input type="password" name="password" class="form-control" id="" placeholder="Password" />
+            <input type="password" name="password" class="form-control rounded h-8 " id="" placeholder=" Password " />
         </div>
 
 
@@ -21,7 +23,9 @@
 
 
         <!--Sign in button-->
-        <button type="submit" class="" value="Login" data-te-ripple-init data-te-ripple-color="light">
+        <button type="submit"
+            class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full"
+            value="Login" data-te-ripple-init data-te-ripple-color="light">
             Sign in
         </button>
         {% for messages in messages%}
@@ -31,8 +35,7 @@
         <!--Register link-->
         <p class="mt-6 text-center text-neutral-800 dark:text-neutral-200">
             Not a member?
-            <a href="{% url 'register' %}"
-                class="text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600">Register</a>
+            <a href="{% url 'register' %}" class="text-primary text-white">Register</a>
         </p>
     </form>
 </div>
