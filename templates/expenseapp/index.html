@@ -125,7 +125,7 @@
             <span>Categorical Expenses</span>
         </div>
         <hr>
-        <div id="30-day-table">
+        <div id="category-sum-table">
             {% for categorical_sum in categorical_sums %}
             <div class="flex flex-wrap px-20 py-5">
                 <span>
@@ -134,12 +134,74 @@
             </div>
             <div class="flex flex-wrap px-20 py-5">
                 <span class="text-white">
-                    €{{categorical_sum.sum|intcomma}}
+                    €{{categorical_sum.sum}}
                 </span>
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
+<div class="flex">
+    <div class="w-1/2 shadow-lg ml-10">
+        <h1 class="m-10">Expense across categories</h1>
+        <canvas id="myChart" class="m-10"></canvas>
+
+    </div>
+    <div class="w-1/2 shadow-lg ml-10">
+
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+
+<script>
+    const categoryies = []
+    const categories_sums = []
+
+    const categorySum = document.getElementById('category-sum-table').getElementsByTagName('div');
+
+    for (i = 0; i < categorySum.length; i++) {
+        if (i % 2 == 1) {
+            categories_sums.push(categorySum[i].innerText.replace("€", ""))
+
+        } else {
+            categoryies.push(categorySum[i].innerText)
+        }
+    }
+    console.log(categorySum)
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: categoryies,
+            datasets: [{
+                label: 'Expenses By Categories',
+                data: categories_sums,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
 {% endblock %}
