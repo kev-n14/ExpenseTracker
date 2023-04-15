@@ -1,0 +1,39 @@
+{% extends "expenseapp/base.html" %}
+{% load humanize %}
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{%block content %}
+
+
+
+
+<div class="relative max-h-screen  bg-white m-20 rounded shadow-lg">
+    <img
+        src="https://res.cloudinary.com/dlulkctls/image/upload/v1681578771/leone-venter-VieM9BdZKFo-unsplash_uutsyp.jpg" />
+    <div class="flex">
+        <div class=" absolute  h-fit  top-20 left-5 w-1/2 shadow-lg ml-10 bg-gray-100">
+            <h1 class="absolute text-5xl text-blue-400 inset-10 -translate-x-1/2 -translate-y-1/2 mt-0 m-10">
+                Express tracker</h1>
+            <h2 class="absolute text-3xl text-amber-400 top-2/4 left-22 -translate-x-1/2 p-20 mt-10  tracking-wide">
+                Keep Track Of
+                All
+                Your
+                Expenses In One Place. Express Trcker Will Help You To Do Just That. Join Us Today And Take Control Of
+                Your Expenses</h2>
+            <span class="absolute text-3xl text-amber-400 top-80 left-0 h-16 w-16 p-0 mt-20  tracking-wide">
+                <a href="{%url 'account_login'%}"
+                    class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full ">Login</a>
+            </span>
+
+
+
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

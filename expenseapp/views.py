@@ -1,56 +1,15 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
-from .forms import ExpenseForm, CreateUserForm
-from .decorators import unauthenicated_user, allowed_users, admin_only
+from .forms import ExpenseForm
 from .models import Expenses
 from django.db.models import Sum
 import datetime
 
-@unauthenicated_user
-def registerPage(request):
-    if request.method == "POST":
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created for '+ user)
 
-            return redirect('login')
+def home(request):
+    return render(request, 'expenseapp/home.html') 
 
-    context = {'form': form}
-    return render(request, 'expenseapp/register.html', context)
-
-@unauthenicated_user
-def loginPage(request):
-
-    if request.method == "POST":
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        user = authenticate(request, username=username, password=password)
-        print(user)
-        if user is not None:
-            login(request, user)
-            
-            return redirect('index')
-
-        else:
-            messages.info(request, 'Username or Password is incorrect')
-
-    context = {}
-    return render(request, 'expenseapp/login.html', context)
-
-
-def logoutUser(request):
-    logout(request)
-    return redirect('login')
-
-
-@login_required(login_url='login')
-@admin_only
 def index(request):
     if request.method == "POST":
         expense = ExpenseForm(request.POST)
@@ -84,8 +43,8 @@ def index(request):
         'yearly_sum': yearly_sum, 'monthly_sum': monthly_sum, 'weekly_sum': weekly_sum,
         'daily_sums': daily_sums, 'categorical_sums': categorical_sums})
 
-@login_required(login_url='login')
-@allowed_users(allowed_roles=['admin'])
+
+
 def edit(request, id):
     expense = Expenses.objects.get(id=id)
     expense_form = ExpenseForm(instance=expense)

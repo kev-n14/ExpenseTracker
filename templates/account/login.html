@@ -1,0 +1,44 @@
+{% extends "expenseapp/base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+<div class="max-w-md m-auto ">
+  <div class=" col-span-8 bg-purple-400 shadow-lg rounded-lg  px-10 py-10 min-h-fit my-10">
+
+
+    <h1 class="text-white font-bold text-3xl pb-5 text-center">{% trans "Login" %}</h1>
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      <div class="grid grid-cols-2 gap-4">
+        <!--First username input-->
+        <div class="relative mb-6" data-te-input-wrapper-init>
+          {{form.as_p}}
+        </div>
+      </div>
+
+      {% if redirect_field_value %}
+
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+
+      {% endif %}
+      <div class="text-center m-2">
+        <button
+          class="primaryAction bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 mx-4 my-5 px-5 py-2 text-white font-bold rounded-full"
+          type="submit">{% trans "Sign In" %}</button>
+
+      </div>
+      <div class=" px-1 py-1 text-white  py-2 text-center">
+        <p class="p-2">{% blocktrans %}If you have not created an account yet, then please
+          <p><a href="{{ signup_url }}"
+              class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Sign
+              Up</a>
+            {% endblocktrans %}</p>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

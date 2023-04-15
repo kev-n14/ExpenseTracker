@@ -1,0 +1,9 @@
+{% extends "expenseapp/base.html" %}
+{% load humanize %}
+{%block content %}
+view
+{% endblock %}
+{%block content %}
+{% for td in user.expenselist.all%}
+<p><a href="{td.id}">{{td.name}}</a></p>
+{% endblock %}

@@ -16,22 +16,39 @@
 
         <nav class="shadow-lg p-5">
             <div class="container flex flex-wrap justify-between items-center mx-auto">
-                <a href="/index" class="flex">
+                <a href="/home" class="flex">
                     <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681470347/expense-tracker-low-resolution-logo-white-on-transparent-background_yscuhs.png"
                         class="h-12 mr-6" alt="Expense Logo" />
 
                 </a>
+
                 <div>
+                    {% if user.is_authenticated %}
                     <span class="text-white text-bold text-xl">Hello {{request.user}}, </span>
-                    <span> <a href="{% url 'logout' %}"
+                    <span> <a href="{%url 'account_logout'%}"
                             class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Logout</a>
                     </span>
+
+                    {%else%}
+                    <span class="text-white text-bold text-xl">Welcome, Become a Member </span>
+
+                    <span> <a href="{%url 'account_login'%}"
+                            class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Login</a>
+                    </span>
+                    <span> <a href="{%url 'account_signup'%}"
+                            class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Sign
+                            Up</a>
+                    </span>
+                    {%endif%}
 
                     <div>
 
                     </div>
 
         </nav>
+        <div class="container">
+
+        </div>
 
         {%block content %}
         {% endblock %}
@@ -40,7 +57,7 @@
         <footer class=" bottom-0 left-0 w-screen rounded-lg shadow dark:bg-gray-900 m-4 px-10 py-4">
             <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                 <div class="sm:flex sm:items-center sm:justify-between">
-                    <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0">
+                    <a href="/home" class="flex items-center mb-4 sm:mb-0">
                         <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681470202/expense-tracker-low-resolution-logo-black-on-transparent-background_r9jbwo.png"
                             class="h-8 mr-3" alt="Expense Logo" />
                         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
