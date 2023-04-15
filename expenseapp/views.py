@@ -4,6 +4,7 @@ from django.contrib import messages
 from .forms import ExpenseForm
 from .models import Expenses
 from django.db.models import Sum
+from django.contrib.auth.models import User
 import datetime
 
 
@@ -37,11 +38,13 @@ def index(request):
 
     categorical_sums = Expenses.objects.filter().values('category').order_by('category').annotate(sum=Sum('amount'))
 
+    #displayName = User.objects.all()
+    
     expense_form = ExpenseForm()
-    return render(request, 'expenseapp/index.html', 
+    return render(request, 'expenseapp/index.html',
     {'expense_form': expense_form, 'expenses': expenses, 'total_expenses': total_expenses,
         'yearly_sum': yearly_sum, 'monthly_sum': monthly_sum, 'weekly_sum': weekly_sum,
-        'daily_sums': daily_sums, 'categorical_sums': categorical_sums})
+        'daily_sums': daily_sums, 'categorical_sums': categorical_sums,})
 
 
 
@@ -63,3 +66,13 @@ def delete(request,id):
         expense = Expenses.objects.get(id=id)
         expense.delete()
     return redirect('index')
+
+def profile(request):
+    
+    all_users = User.objects.all()
+    for each_user in all_users:
+        all_lists = each_user.owned_lists.all()
+        print (all_lists)
+
+    return render(request, 'index', all_lists)
+

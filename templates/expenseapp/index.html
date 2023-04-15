@@ -6,27 +6,33 @@
 </div>
 <form class="shadow-lg m-10 rounded-lg" method="POST">
     {% csrf_token %}
+    {% if user.is_superuser %}
+    <div class="form-container px-10 py-10 flex">
+        <div class="mx-10">
+            <div class="mb-5">
+                <!-- fix-->
+                <label class="text-white"> {{request.user}}</label>
+            </div>
+            <div class="border"></div>
+        </div>
+    </div>
+    {% endif %}
     <div class="form-container px-10 py-10 flex">
         <div class="mx-10">
             <div class="mb-5">
                 <label class="text-white"> Expenses Name</label>
-
             </div>
             <div class="border">{{ expense_form.name}}</div>
         </div>
-
         <div class="mx-10">
             <div class="mb-5">
                 <label class="text-white "> Amount</label>
-
             </div>
             <div class="border">{{ expense_form.amount}}</div>
         </div>
-
         <div class="mx-10">
             <div class="mb-5">
                 <label class="text-white"> Category</label>
-
             </div>
             <div class="border">{{ expense_form.category}}</div>
         </div>
@@ -35,7 +41,6 @@
                 class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Add</button>
         </div>
     </div>
-
 </form>
 <div class="m-10 font-bold text-white text-2xl">
     Expenses <i class="fa-solid fa-wallet"></i>
@@ -67,10 +72,8 @@
                 <button type="submit" name="delete"
                     class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full"><i
                         class="fa-solid fa-trash"></i> Delete</button>
-
             </form>
         </span>
-
     </div>
     {% endfor%}
     <!--Displaying Total-->
@@ -81,25 +84,22 @@
             €{{ total_expenses.amount__sum|intcomma }}
         </span>
     </div>
-    <!--Displaying Total-->
+    <!--Displaying Total for 365,30,7 Days-->
 </div>
 <div class="flex">
     <div class="w-1/3 shadow-lg ml-10 rounded-lg">
         <h1 class="ml-10 font-bold text-green-400"> Last 365 Days</h1>
         <h1 class="ml-10 my-5 text-2xl text-white font-bold"> €{{ yearly_sum.amount__sum|intcomma}}</h1>
     </div>
-
     <div class="w-1/3 shadow-lg ml-10 rounded-lg">
         <h1 class="ml-10 font-bold text-green-400"> Last 30 Days</h1>
         <h1 class="ml-10 my-5 text-2xl text-white font-bold"> €{{ monthly_sum.amount__sum|intcomma}}</h1>
     </div>
-
     <div class="w-1/3 shadow-lg ml-10 rounded-lg">
         <h1 class="ml-10 font-bold text-green-400"> Last 7 Days</h1>
         <h1 class="ml-10 my-5 text-2xl text-white font-bold"> €{{ weekly_sum.amount__sum|intcomma}}</h1>
     </div>
 </div>
-
 <div class="flex">
     <div class="w-1/2 shadow-lg m-10">
         <div class="flex flex-wrap space-x-40 font-bold px-20 py-5 text-green-400">
@@ -113,7 +113,6 @@
                     {{daily_sum.date}}
                 </span>
             </div>
-
             <div class="flex flex-wrap px-20 py-5 font-bold">
                 <span class="text-white">
                     €{{daily_sum.sum}}
@@ -123,7 +122,6 @@
             {% endfor %}
         </div>
     </div>
-
     <div class="w-1/2 shadow-lg m-10">
         <div class="flex flex-wrap space-x-40 font-bold px-20 py-5 text-green-400">
             <span>Categorical Expenses</span>
@@ -150,17 +148,16 @@
     <div class="w-1/2 shadow-lg ml-10 bg-gray-100">
         <h1 class="m-10">Expense across categories</h1>
         <canvas id="myChart" class="m-10"></canvas>
-
     </div>
     <div class="w-1/2 shadow-lg ml-10 bg-gray-100">
         <h1 class="m-10">Daily Expenses</h1>
         <canvas id="chartDaily" class="m-10"></canvas>
-
-
     </div>
+    {% for td in user.expenselist.all%}
+    <p><a href="/{{td.id}}">{{td.name}}</a></p>
+    {% endfor %}
 </div>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
-
 <script>
     const categoryies = []
     const categories_sums = []
@@ -173,12 +170,10 @@
     for (i = 0; i < categorySum.length; i++) {
         if (i % 2 == 1) {
             categories_sums.push(categorySum[i].innerText.replace("€", ""))
-
         } else {
             categoryies.push(categorySum[i].innerText)
         }
     }
-
     const dailySum = document.getElementById('30-day-table').getElementsByTagName('div');
 
     for (i = 0; i < dailySum.length; i++) {
