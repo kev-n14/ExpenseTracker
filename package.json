@@ -20,5 +20,6 @@
   "homepage": "https://github.com/kev-n14/ExpenseTracker#readme",
   "dependencies": {
     "tailwindcss": "^2.2.16"
-  }
+  },
+  "devDependencies": {}
 }
