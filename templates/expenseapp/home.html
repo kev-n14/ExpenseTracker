@@ -1,31 +1,255 @@
 {% extends "expenseapp/base.html" %}
 {% load humanize %}
-{% load i18n %}
-{% load account socialaccount %}
-
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
 {%block content %}
-
-
-
-
-<div class="relative max-h-full  bg-white m-20 rounded shadow-lg">
-    <img
-        src="https://res.cloudinary.com/dlulkctls/image/upload/v1681578771/leone-venter-VieM9BdZKFo-unsplash_uutsyp.jpg" />
-    <div class="flex">
-        <div class=" absolute  h-fit  top-20 left-5 w-1/2 shadow-lg ml-10 bg-gray-100">
-            <h1 class="absolute text-5xl text-blue-400 inset-10 -translate-x-1/2 -translate-y-1/2 mt-0 m-10">
-                EXPENSE TRACKER</h1>
-            <h2 class="absolute text-3xl text-amber-400 top-2/4 left-22 -translate-x-1/2 p-20 mt-10  tracking-wide">
-                Keep track of all your expenses in one place.
-                Expenses Tracker will help you to do just that. Join us today and take control of
-                your expenses.</h2>
-            <span class="absolute text-3xl text-amber-400 top-80 left-0 h-16 w-16 p-0 mt-20  tracking-wide">
-                <a href="{%url 'account_login'%}"
-                    class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full ">Login</a>
-            </span>
+<div class="m-10 font-bold text-white text-2xl">
+    Add Expenses <i class="fa-solid fa-plus"></i>
+</div>
+<!--form to popluate expense form -->
+<form class="shadow-lg m-10 rounded-lg" method="POST">
+    {% csrf_token %}
+    <div class="form-container px-10 py-10 flex">
+        <div class="mx-10">
+            <div class="mb-5">
+                <label class="text-white"> Expenses Name</label>
+            </div>
+            <div class="border">{{ expense_form.name}}</div>
+        </div>
+        <div class="mx-10">
+            <div class="mb-5">
+                <label class="text-white "> Amount</label>
+            </div>
+            <div class="border">{{ expense_form.amount}}</div>
+        </div>
+        <div class="mx-10">
+            <div class="mb-5">
+                <label class="text-white"> Category</label>
+            </div>
+            <div class="border">{{ expense_form.category}}</div>
+        </div>
+        <div class="mx-10 mt-8">
+            <button
+                class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Add</button>
+        </div>
+    </div>
+</form>
+<div class="m-10 font-bold text-white text-2xl">
+    Expenses <i class="fa-solid fa-wallet"></i>
+</div>
+<!-- Expenses Headings -->
+<div class="shadow-lg m-10 rounded-lg">
+    <div class="expense-header flex flex-wrap space-x-40 px-20 py-2 text-white text-xl">
+        <span>Name</span>
+        <span>Amount</span>
+        <span>Date</span>
+        <span>Category</span>
+        <span>Edit</span>
+        <span>Delete</span>
+    </div>
+    <!--Display all Fields of Database -->
+    <hr class="m-8">
+    {% for expense in expenses %}
+    <div class="expense-row flex flex-wrap px-20 py-5 text-white">
+        <span class="font-bold rounded-full">{{ expense.name }}</span>
+        <span class="font-bold">€{{ expense.amount|intcomma }}</span>
+        <span class="font-bold">{{ expense.date }}</span>
+        <span class="font-bold">{{ expense.category }}</span>
+        <!--Edit Button -->
+        <span class="font-bold"><a href="{% url 'edit' expense.id %}"
+                class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full"><i
+                    class="fa-regular fa-pen-to-square"></i>
+                Edit</a></span>
+        <!-- Delete Button  -->
+        <div class="font-bold ">
+            <form method='post' action="{% url 'delete' expense.id %}">
+                {% csrf_token %}
+                <button type="submit" name="delete"
+                    class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full"><i
+                        class="fa-solid fa-trash"></i> Delete</button>
+            </form>
+        </div>
+    </div>
+    {% endfor%}
+    <!--Displaying Total-->
+    <hr class="white">
+    <div class=" px-20 py-5">
+        <h3 class="font-bold text-white text-xl">Total :</h3>
+        <span class="font-bold text-white text-center text-xl">
+            €{{ total_expenses.amount__sum|intcomma }}
+        </span>
+    </div>
+</div>
+<!--Displaying Total for 365,30,7 Days-->
+<div class="flex">
+    <div class="w-1/3 shadow-lg ml-10 rounded-lg">
+        <h1 class="ml-10 font-bold text-green-400"> Last 365 Days</h1>
+        <h1 class="ml-10 my-5 text-2xl text-white font-bold"> €{{ yearly_sum.amount__sum|intcomma}}</h1>
+    </div>
+    <div class="w-1/3 shadow-lg ml-10 rounded-lg">
+        <h1 class="ml-10 font-bold text-green-400"> Last 30 Days</h1>
+        <h1 class="ml-10 my-5 text-2xl text-white font-bold"> €{{ monthly_sum.amount__sum|intcomma}}</h1>
+    </div>
+    <div class="w-1/3 shadow-lg ml-10 rounded-lg">
+        <h1 class="ml-10 font-bold text-green-400"> Last 7 Days</h1>
+        <h1 class="ml-10 my-5 text-2xl text-white font-bold"> €{{ weekly_sum.amount__sum|intcomma}}</h1>
+    </div>
+</div>
+<!--Displaying Total Sum From Past 30 Days-->
+<div class="flex">
+    <div class="w-1/2 shadow-lg m-10">
+        <div class="flex flex-wrap space-x-40 font-bold px-20 py-5 text-green-400">
+            <span>Past 30 Days Sum Expenses</span>
+        </div>
+        <hr>
+        <div id="30-day-table">
+            {% for daily_sum in daily_sums %}
+            <div class="flex flex-wrap px-20 py-5 font-bold  text-white ">
+                <span>
+                    {{daily_sum.date}}
+                </span>
+            </div>
+            <div class="flex flex-wrap px-20 py-5 font-bold">
+                <span class="text-white">
+                    €{{daily_sum.sum}}
+                </span>
+            </div>
+            <hr>
+            {% endfor %}
+        </div>
+    </div>
+    <!--Displaying Expenses Categorically -->
+    <div class="w-1/2 shadow-lg m-10">
+        <div class="flex flex-wrap space-x-40 font-bold px-20 py-5 text-green-400">
+            <span>Categorical Expenses</span>
+        </div>
+        <hr>
+        <div id="category-sum-table">
+            {% for categorical_sum in categorical_sums %}
+            <div class="flex flex-wrap px-20 py-5 font-bold  text-white">
+                <span>
+                    {{categorical_sum.category}}
+                </span>
+            </div>
+            <div class="flex flex-wrap px-20 py-5 font-bold  text-white">
+                <span class="text-white">
+                    €{{categorical_sum.sum}}
+                </span>
+            </div>
+            <hr>
+            {% endfor %}
         </div>
     </div>
 </div>
+<div class="flex">
+    <!--Displaying Chart Daily Expenses-->
+    <div class="w-1/2 shadow-lg ml-5 bg-gray-100">
+        <h1 class="m-10">Daily Expenses</h1>
+        <canvas id="chartDaily" class="m-10"></canvas>
+    </div>
+    <!--Displaying Chart Expense Across Categories-->
+    <div class="w-1/2 shadow-lg ml-5 bg-gray-100">
+        <h1 class="m-10">Expense Across Categories</h1>
+        <canvas id="myChart" class="m-10"></canvas>
+    </div>
+</div>
+<!--Script-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+<script>
+    const categoryies = []
+    const categories_sums = []
 
+    const dates = []
+    const sum = []
+
+    const categorySum = document.getElementById('category-sum-table').getElementsByTagName('div');
+
+    for (i = 0; i < categorySum.length; i++) {
+        if (i % 2 == 1) {
+            categories_sums.push(categorySum[i].innerText.replace("€", ""))
+        } else {
+            categoryies.push(categorySum[i].innerText)
+        }
+    }
+    const dailySum = document.getElementById('30-day-table').getElementsByTagName('div');
+
+    for (i = 0; i < dailySum.length; i++) {
+        if (i % 2 == 1) {
+            sum.push(dailySum[i].innerText.replace("€", ""))
+
+        } else {
+            dates.push(dailySum[i].innerText)
+        }
+    }
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: categoryies,
+            datasets: [{
+                label: 'Expenses By Categories',
+                data: categories_sums,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    var ctxDaily = document.getElementById('chartDaily').getContext('2d');
+    var myChart = new Chart(ctxDaily, {
+        type: 'bar',
+        data: {
+            labels: dates,
+            datasets: [{
+                label: 'Expenses By Date',
+                data: sum,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
 {% endblock %}

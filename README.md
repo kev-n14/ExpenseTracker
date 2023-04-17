@@ -1,51 +1,72 @@
 # PP4-Expense-Tracker
 
-![logo](/media/images/readme/expense-tracker-logo.png)
+![logo](https://res.cloudinary.com/dlulkctls/image/upload/v1681688063/readme/expense-tracker-low-resolution-logo-white-on-transparent-background_wvp0bp.png)
 # Express Tracker Application
 
 
-This site is based on the **brief explantation**
+This site is Expense Tracker that user's can use to add expenses to a joined expense tracker. The expense tracker website can only be accessed by logged in user's. This website store's all expenses inputted by the users and provide a yearly, monthly and weekly summary. Users can also view a breakdown of the expenses by catetory. Users also have the ability to edit and delete expenses. The Expense track website is the perfect place to keep track of all you finance's.
 
 ## Features
 ---
+### **Landing Page**
+The Landing page greets the user with a bright colourful purple view  with a contrasting white large image and a brief message about what the site is about. The user is invited to login or sign up.
+
+![Landing Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687776/readme/landing-page_qntp7b.png)
+
 ### **Navigation Bar**
-![Navigation Bar](/media/images/readme/nav-bar.png)
+The Navigation bar presents the user with the 'Expense Tracker' Logowhich is a link to the home page. The Navigation bar also contains a greeting message inviting the vister to become a member. Two buttons are available to the vister to 'login' if they are member and a 'sign up' button if they are not a member.
+
+![Navigation Bar](https://res.cloudinary.com/dlulkctls/image/upload/v1681687779/readme/nav-bar_v4oie3.png)
+
+### **Sign Up Page** 
+The Sign up the user is invited to sign up by entering Username, Email address, password and re-enter text box. When the user enter these details.
+If the user is already a member they can click on the 'Sign In' button, the user is then transferred to the sign in page.
+![Sign Up Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687780/readme/sign-up-page_szpuop.png)
 
 
+### **Login Page**
+The Login Page, the user is invited to enter username and password and click on 'Sign In' button, If username and password match creditials stored the user is transferred to the home page of the expense tracker website. If the user is not a member they can click on the 'Sign Up' button, the user is then transferred to the sign up page.
+
+![Login Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687768/readme/login-page_zwrljf.png)
+
+
+### **Signout Page** 
+When the user clicks on the logout button in the navogation bar they will be transferred to the sign out page. The user isgreeted witha message asking if they are show they would lkike to log out. When the user clicks on the sign out button the user the brought to the index page.
+
+![Signout Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687767/readme/sign-out-page_bhannp.png)
 
 ### **The Add Expenses section**
-![Hero Image](/media/images/readme/index-page.png)
+The Add Expenses section allows users to add items to the expense tracker. Items added take the properties of 'Expense Name', 'Amount', 'Category'.
+
+![The Add Expenses section](https://res.cloudinary.com/dlulkctls/image/upload/v1681687770/readme/index-page_eyuej3.png)
 
 
 
 ### **Expense Form Section**
-![Main Content](/media/images/readme/expense-form.png)
+The Expense Form Section displays all expenses added by the user. This section provides each item with an edit and delete button. The button's are provided to the user if they need to edit an expense or to delete an expense from the form.
+The total of all expenses is diplayed at the bottom of the expense form.
+
+![Expense Form Section](https://res.cloudinary.com/dlulkctls/image/upload/v1681687774/readme/expense-form_yubcta.png)
 
 
+### **Expense Summmary and Charts**
+The user is greeted with a brief summary of the expenses from the past 30 days and a categorical breakdown of the expenses. On this page the user will also find there expenses displayed by bar charts. 
 
-### **Login Page**
-![Eyewitness](/media/images/readme/login-page.png)
-
-
-### **Signout Page** 
-![Video Section](/media/images/readme/sign-out-page.png)
+![Expense Summmary and Charts](https://res.cloudinary.com/dlulkctls/image/upload/v1681687778/readme/expense-summary-chart_olfueu.png)
 
 
+### **Edit Page**
+The Edit Page allows the user to edit an expense that as been added to the database. The user can edit the 'Expense Name', 'Expense Amount', 'Expense category' from this page.
 
-### **Footer**
-![Footer section](/media/images/readme/nav-bar.png)
-
-### **Gallery**
-![Gallery Page](/assets/images/ReadMe-Images/Gallery-page.html.png)
-
-
-### **The Sign Up Page**
-![Sign Up Page](/assets/images/ReadMe-Images/Sign-up-page.png)
+![Edit Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687768/readme/edit-page_e8gmgl.png)
 
 
 ### **Features Left to Implement**
 In the future we hope to add:
-* 
+* Separate user expense forms and specfic to each user.
+* forgotten password option for the user.
+* downloadable pdf's of expenses.
+
 
 ## User Experience (UX)
 ---
@@ -54,67 +75,68 @@ In the future we hope to add:
     * **First Time Visitor Goals**
         1. As a First Time Visitor, I want to be able to understand the main purpose of this site. I should be to determine the aim of the site effortlessly and in a short period.
 
-        2. As a First Time Visitor, I believe navigation from one page to another should be seamless and efficient. I want a site where I don't have to scroll a lot to find my way around the webpage.
+        2. As a First Time Visitor, I want to be able to Sign up and create an account.
 
-        3. As a First Time Visitor, I want many different types of media content such as text, imagery, video etc.
+        3. As a First Time Visitor, I want to be to log in.
 
     * **Returning Visitor Goals**
-        1. As a Returning Visitor, I want to learn more about the organization behind the webpage.
+        1. As a Returning Visitor, I want to be able to get a summary of my expenses over a week.
 
-        2. As a Returning Visitor, I would like to be able to get in contact with the organization to find out about future projects they may have.
+        2. As a Returning Visitor, I want to be able to Sign In to view my expenses and to be able to sign out.
 
-        3. As a Returning Visitor, I want more downloadable content for me to share.
+        3. As a Returning Visitor, I want add expenses to my expenses list.
 
     * **Frequent User Goals**
-        1. As a Frequent User, I want to be able to keep in touch with members who have joined the sign-up page.
+        1. As a Frequent User, I want to be able to get a summary of my expenses over a month, year.
 
-        2. As a Frequent User, I want to check to see if any new information has been added.
+        2. As a Frequent User, I want to be able to categories my expenses.
 
-        3. As a Frequent User, I want to view and download the Gallery page images.
+        3. As a Frequent User, I want to be able to view my expenses via bar , pie charts.
 
 * ### **Design**
     * **Colour Scheme**
-        *  As this site is based around a historical event the colour scheme is white with aspects of black and grey.
-        * The hero image is the only brightly coloured image to catch the user's eye.
-        * On the Gallery page, all the images are bright and have a white background. To focus the user's attention on the images.
-        * The sign-up page will have a large background image with an off-green hue contrast. The sign-up bottom at the bottom of the form is the same colour as the background to connect these two elements and to make for a more pleasing experience for the user.
+        * As this site is based around expense tracking, the aim was to keep it professional but with a bit of playfulness by added vibrant colour.
+        * The background colour throughout all pages is sublty gradient of dark to light purple to add a pop of colour.
+        * On the landing page , the contrast between the backgound and large white image catches the users eye and draws them in.
+        * The use of different grades of purple, white text with the pop of green and blue buttons makes for a pleasing experience for the user
     * **Typography**
-        * The "Noto Serif Georgian" font is the main font used throughout the whole website with Georgia, Times, and serif as the fallback font respectively in case the font isn't being imported into the site correctly. "Noto Serif Georgian" is a clean, attractive, and appropriate font.
+        * 'Segoe UI' font is the main font used throughout the whole website with Roboto, Helvetica, and Arial as the fallback font respectively in case the font isn't being imported into the site correctly. 'Segoe UI' is a clean, attractive, and appropriate font.
     * **Imagery**
-         * On the Home page, the hero image is brightly coloured and large to catch the user's attention.
-         * On the Gallery page there is a balance of brightly coloured images and dark grey images. All images have a white background. To focus the user's attention on the images.
-        * The sign-up page will have a large background image with an off-green hue contrast.
+         * On the Landing page, the hero image is bright, white and large to catch the user's attention. 
+         * To the top right of the image is a cup of coffe with cherries and keyboard and pen. To make for a calming image and an inviting experience.
+ 
 
 * ### **Wireframes**
-    * Fatima - 3 Pages Wireframe - [View](https://github.com/kev-n14/pp1-miracle-of-the-sun/blob/main/assets/Fatima.bmpr)
-
-
-    * Mobile Wireframe - veritical and landscape - [View](https://github.com/kev-n14/pp1-miracle-of-the-sun/blob/main/assets/Phone.bmpr)
+    * Edit Page - [View](https://res.cloudinary.com/dlulkctls/image/upload/v1681687467/wireframes/EDIT_PAGE_wjxdgb.png)
+    * Login - [View](https://res.cloudinary.com/dlulkctls/image/upload/v1681687467/wireframes/LOGIN_xttxan.png)
+    * Sign Up - [View](https://res.cloudinary.com/dlulkctls/image/upload/v1681687467/wireframes/SIGNUP_m9jfsn.png)
+    * Landing Page - [View](https://res.cloudinary.com/dlulkctls/image/upload/v1681687467/wireframes/LANDING_PAGE_u0nurs.png)
 
 ## Technologies Used
 ---
 ### Languages Used
 * [HTML5](https://en.wikipedia.org/wiki/HTML5)
 * [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
 
  ### Programs Used
 1. [Python](https://www.python.org/):
-    * 
+    * Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation via the off-side rule. Python is dynamically typed and garbage-collected
 1. [ElephantSQL](https://www.elephantsql.com/):
-    * 
+    * ElephantSQL provides a browser tool for SQL queries where you can create, read, update and delete data directly from your web browser.
 1. [Django](https://www.djangoproject.com/):
-    * 
+    * Django is a free and open-source, Python-based web framework that follows the model–template–views architectural pattern. 
 1. [Django-allauth](https://django-allauth.readthedocs.io/en/latest/):
-    * 
+    * ntegrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
 1. [Tailwindcss](https://tailwindcss.com/):
-    * 
+    * Tailwind CSS is an open source CSS framework. The main feature of this library is that, unlike other CSS frameworks like Bootstrap, it does not provide a series of predefined classes for elements such as buttons or tables.
 1. [Chart.js](https://www.chartjs.org/):
-    * 
+    * Chart.js is a free, open-source JavaScript library for data visualization, which supports eight chart types: bar, line, area, pie, bubble, radar, polar, and scatter.
 1. [Node.js](https://nodejs.org/en):
-    * 
-
+    * Node.js is a cross-platform, open-source server environment that can run on Windows, Linux, Unix, macOS, and more. Node.js is a back-end JavaScript runtime environment, runs on the V8 JavaScript Engine, and executes JavaScript code outside a web browser
 1. [favicon](https://www.flaticon.com/):
-    * 
+    * Used to create icons for web browser tab.
 1. [Google Fonts](https://fonts.google.com/):
     * Google fonts were used to choose the fonts for this site. the fonts were declared in the style.css file which is used on all pages throughout the site.
 
@@ -136,88 +158,93 @@ In the future we hope to add:
 
 ## Validator Testing
 
-The W3C Markup Validator and W3C jigsaw CSS Validator Services were used to validate every page of the project to ensure there were no syntax errors in the project.
+The W3C Markup Validator, W3C jigsaw CSS Validator and PEP8 Code Institute validator Services were used to validate the project to ensure there were no major errors in the project.
 * **HTML**
-No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fkev-n14.github.io%2Fpp1-miracle-of-the-sun%2Findex.html)
+1. Home Page - Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
+1. Landing Page - Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
+1. Edit Page - Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
+1. Login Page - Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
+1. Sign Up - Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
+1. Sign Out- Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
+![HTML Validator ](https://res.cloudinary.com/dlulkctls/image/upload/v1681694121/readme/lighthouse/html-validator_w5hykb.png)
 * **CSS**
 No errors were found when passing through the official [(Jigsaw) validator](https://validator.w3.org/nu/#textarea)
+![CSS Validator ](https://res.cloudinary.com/dlulkctls/image/upload/v1681695360/readme/lighthouse/css-result_jfroz4.png)
+* **Python**
+* [PEP8 Code Institute validator:] (https://pep8ci.herokuapp.com/#)
+    * A few minor errors:
+        * Line too long error
 
 ### Testing User Stories from the User Experience (UX) Section
 #### **First Time Visitor Goals**
 1. As a First Time Visitor, I want to be able to understand the main purpose of this site. I should be to determine the aim of the site effortlessly and in a short period.
 
-    * Upon visiting the site, users are greeted with a clean, spacious, and easily read navigation bar to go to the page they would like to visit.
-    * The main points of the webpage are made immediately with the section below the hero image.
+    * Upon visiting the site, users are greeted with a clean, spacious, colourful and easily read navigation bar and landing page.
+    * The main points of the webpage are made immediately with the landing page hero image and text.
 
-1. As a First Time Visitor, I believe navigation from one page to another should be seamless and efficient. I want a site where I don't have to scroll a lot to find my way around the webpage.
+1. As a First Time Visitor, I want to be able to Sign up and create an account.
 
-    * The site has been designed to have a structured flow and an effortless feel for the user. At the top of each page, there is a clear navigation bar, This navigation bar is identical on all pages throughout the site. each link's name describes the purpose of the page.
+    * On the landing Page the user is invited to become a member by a message on the navigation bar.
+    * In the navigation bar the user will find a Sign Up Button.
+    * From this button a user will be brought to the sign up page. 
+    * The user will be asked to fill in information - username, email, password and re-enter password.
 
-    * As the user scrolls down the page the navigation bar will follow the user. allowing the user to have navigation over the site at any time. 
-    * At the bottom of the page is social links connecting, to keep the user always connected and engaged.
+1. As a First Time Visitor,  I want to be to log in.
 
-1. As a First Time Visitor, I want many different types of media content such as text, imagery, video, etc.
-
-    * Throughout the entire website the user can make use of many different types of media content.
-    * On the home page the user is greeted with a large image and below this is a section of text media as the user scrolls down they have access to video media. This will keep the user engaged with the webpage
-    * Surrounding all these media contents there is breathing space for the content which makes for an effortless and clean experience.
+    * From the Landing Page the user can access the login page via the login button in the navigation bar or the hero image button.
+    * Upon clicking on the Login button the user is transferred to the login page.
+    * The user will be ask to fill in username and password creditials to gain access to the home page.
     
 #### **Returning Visitor Goals**
-1. As a Returning Visitor, I want to learn more about the organization behind the webpage.
-    * At the end of the footer, there are social links that will keep the user educate the user about the organization and keep them up to date.
-    
+1. As a Returning Visitor, I want to be able to get a summary of my expenses over a week.
+    *  Below the users expenses list, the user can view total expenses from the last 7 days.
 
-1. As a Returning Visitor, I would like to be able to get in contact with the organization to find out about future projects they may have.
-
-    * The sign-up page is key for keeping the user connected to the site.
-    * On the sign-up page, they can fill out the form on this page or they can get in touch via the social media links at the bottom of the webpage.
-    * The footer contains links to the organisation's Facebook, Twitter, Instagram, YouTube, and LinkedIn pages.
-    * Whichever link they click, it will open up in a new tab to ensure the user can easily get back to the website.
+1. As a Returning Visitor, I want to be able to Sign In to view my expenses and to be able to sign out.
+    * From the Landing Page the user can access the login page via the login button in the navigation bar or the hero image button.
+    * Upon clicking on the Login button the user is transferred to the login page.
+    * From the navigation bar the user can find the logout button.
+    * upon clicking on the button the user will be brought to the sign out webpage were the user is asked if they are sure they want to logout.
 
 
-1. As a Returning Visitor, I want more downloadable content for me to share.
-    * In the near future downloadable pdf files will be available for users to download and share.
-    * These links will be found on the home page.
+1. As a Returning Visitor, I want add expenses to my expenses list.
+    * from the home page the user can add expenses by filling out the fields required - Expenses Name, Amount, Category
 
 #### **Frequent User Goals**
-1. As a Frequent User, I want to be able to keep in touch with members who have joined the sign-up page.
+1. As a Frequent User, I want to be able to get a summary of my expenses over a month, year.
+    * Below the users expenses list, the user can view total expenses from the last 30 days and the last 365 Days.
 
-    * The user would already be familiar with the website, they will be able to keep in contact with members of the webpage by signing up to the sign-up page and staying in contact by email or via social media links such as Facebook, Instagram, and Twitter.
+2. As a Frequent User, I want to be able to categories my expenses.
+    * Below the users expenses list, all expenses are broken down into Categorical Expenses with the total of each category.
 
-1. As a Frequent User, I want to check to see if any new information has been added.
-
-    * The user would already be comfortable with the website design and layout and can easily click the social media links at the bottom of all pages throughout the website.
-
-1. As a Frequent User, I want to view and download the Gallery page images.
-
-    * The user will have experience navigating the website and will be able to view the images on the Gallery page.
-    * As all the images are sourced from freely sourced websites all images can be downloaded and used by the user with no permission needed.
+3. As a Frequent User, I want to be able to view my expenses via bar , pie charts.
+    * At the bottom of the page the users can view a bar chart with a breakdown of all expenses.
 
 #### **Further Testing**
-* The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge, and Safari browsers.
-* The website was viewed on a variety of devices such as desktops, laptops, iPhone7, iPhone 8 & iPhone X.
-* A large amount of testing was done to ensure that all pages were linking correctly.
-* Friends and family members were asked to review the site and documentation to point out any bugs and/or user experience issues.
+* 
 #### **Known Bugs**
-* On some mobile devices the Hero Image does not fill the screen.
-    * A white gap can be seen to the right of the hero image and the footer.
-*  On some mobile devices, the video does not shrink.
-    * Which causes white gaps on the rest of the elements of the webpage.
-* The navigation bar menu elements on some screen sizes. all three webpage links do not fit.
-    * This causes the sign-up page link to go below the Home and Gallery page links.
+* 
 
 ### **Unfixed Bugs**
-* The navigation bar menu elements on some screen sizes. all three webpage links do not fit.
-    * This causes the sign-up page link to go below the Home and Gallery page links.
+* 
 ## Performance
 ---
 ### **Lighthouse Test**
-* Home Page
-![Home Page](/assets/images/ReadMe-Images/Home-page.png)
-* Gallery Page
-![Gallery Page](/assets/images/ReadMe-Images/Gallery-page-lighthouse.png)
+* Landing Page
+![Landing Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681689346/readme/lighthouse/landing_page_result_rro0zs.png)
+
+* Edit Page
+![Gallery Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/edit-page-result_yur85u.png)
+
 * Sign Up Page 
-![Sign Up Page ](/assets/images/ReadMe-Images/sign-up-lighthouse-test.png)
+![Sign Up Page ](https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/sign-up-result_myoo62.png)
+
+* Sign Out Page 
+![Sign Out Page  ](https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/sign-out-result_rvga3v.png)
+
+* Sign In Page 
+![Sign In Page  ](https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/sign-in-result_tdzfc7.png)
+
+
 ## Deployment
 ---
 ### **GitHub Pages**
@@ -267,19 +294,11 @@ You can break the credits section up into Content and Media, depending on what y
 
 * ### **Content**
     * The main-content section text for the Home page was in part taken from 
-        * ewtn-[Sixth Appartion of Our Lady](https://www.ewtn.com/catholicism/devotions/sixth-apparition-of-our-lady-23368), 
-        * The World Apostolate of Fatima England and Wales-[The Miracle of the sun at Fatima](https://worldfatima-englandwales.org.uk/the-miracle-of-the-sun-at-fatima/),
-        * wikipedia-[Miracle of the Sun](https://en.wikipedia.org/wiki/Miracle_of_the_Sun),
-        * aleteia-[A scientist describes the Miracle of the Sun at Fatima](https://aleteia.org/2021/10/13/a-scientist-describes-the-miracle-of-the-sun-at-fatima/)
+        * 
     * The icons in the footer for social media links was taken from [Font Awesome](https://fontawesome.com/)
 
     * Instructions on how to implement form validation on the Sign Up page was taken from Specific [w3schools](https://www.w3schools.com/) Tutorials.
 
 * ### **Media**
     * The favicon was from [favicon](https://www.flaticon.com/free-icons/catholic/2).
-    * The icon in the navigation bar was created by the developer using Adobe Express.
     * The photos used on the Home and sign-up pages of the site were taken from [unsplash](https://unsplash.com/).
-
-    * The images used for the Gallery page were taken from [unsplash](https://unsplash.com/) and [wikipedia](https://en.wikipedia.org/wiki/Miracle_of_the_Sun).
-    * The video explaining the event was created by 
-Catholic 365, and was embedded and sourced from [Youtube](https://www.youtube.com/watch?v=L4IbOzuNlmE&ab_channel=Catholic365).

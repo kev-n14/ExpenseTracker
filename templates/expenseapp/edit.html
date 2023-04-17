@@ -1,6 +1,6 @@
 {% extends "expenseapp/base.html" %}
 {%block content %}
-
+<!-- Form to edit an entry-->
 <form method="POST" class="shadow-lg m-10">
     {% csrf_token %}
     <div class="px-10 py-10 flex ">
@@ -9,18 +9,21 @@
                 <label class="font-semibold text-white">Expense Name</label>
             </div>
             <div class="border p-1">{{ expense_form.name }}</div>
+            <!--from the expense form get name field -->
         </div>
         <div class="mx-10">
             <div class="mb-5">
                 <label class="font-semibold text-white">Expense Amount</label>
             </div>
             <div class="border p-1">{{ expense_form.amount }}</div>
+            <!--from the expense form get amount field -->
         </div>
         <div class="mx-10">
             <div class="mb-5">
                 <label class="font-semibold text-white">Expense category</label>
             </div>
             <div class="border p-1">{{ expense_form.category }}</div>
+            <!--from the expense form get category field -->
         </div>
         <div class="px-10 py-10">
             <button
@@ -33,10 +36,5 @@
                 type="submit"><i class="fa-solid fa-turn-down-left"></i>Back</button>
         </div>
     </div>
-
-
-
-
-
 </form>
 {% endblock %}

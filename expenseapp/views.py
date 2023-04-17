@@ -8,10 +8,11 @@ from django.contrib.auth.models import User
 import datetime
 
 
-def home(request):
-    return render(request, 'expenseapp/home.html') 
-
 def index(request):
+    return render(request, 'expenseapp/index.html')
+
+
+def home(request):
     if request.method == "POST":
         expense = ExpenseForm(request.POST)
         if expense.is_valid():
@@ -19,7 +20,7 @@ def index(request):
     expenses = Expenses.objects.all()
     total_expenses = expenses.aggregate(Sum('amount'))
 
-    #Logic to calculate 365 days expenses
+    #Logic to calculate 365 days expenses.
     last_year = datetime.date.today() - datetime.timedelta(days=365)
     data = Expenses.objects.filter(date__gt=last_year)
     yearly_sum = data.aggregate(Sum('amount'))
@@ -38,14 +39,13 @@ def index(request):
 
     categorical_sums = Expenses.objects.filter().values('category').order_by('category').annotate(sum=Sum('amount'))
 
-    #displayName = User.objects.all()
-    
     expense_form = ExpenseForm()
-    return render(request, 'expenseapp/index.html',
-    {'expense_form': expense_form, 'expenses': expenses, 'total_expenses': total_expenses,
-        'yearly_sum': yearly_sum, 'monthly_sum': monthly_sum, 'weekly_sum': weekly_sum,
-        'daily_sums': daily_sums, 'categorical_sums': categorical_sums,})
-
+    return render(request, 'expenseapp/home.html',
+    {'expense_form': expense_form, 'expenses': expenses,
+        'total_expenses': total_expenses,
+        'yearly_sum': yearly_sum, 'monthly_sum': monthly_sum,
+        'weekly_sum': weekly_sum,
+        'daily_sums': daily_sums, 'categorical_sums': categorical_sums, })
 
 
 def edit(request, id):
@@ -56,23 +56,13 @@ def edit(request, id):
         form = ExpenseForm(request.POST, instance=expense)
         if form.is_valid():
             form.save()
-            return redirect('index')
-    return render(request, 'expenseapp/edit.html', {'expense_form': expense_form})
+            return redirect('home')
+    return render(request, 'expenseapp/edit.html',
+    {'expense_form': expense_form})
 
 
-
-def delete(request,id):
-    if request.method =='POST' and 'delete' in request.POST:
+def delete(request, id):
+    if request.method == 'POST' and 'delete' in request.POST:
         expense = Expenses.objects.get(id=id)
         expense.delete()
-    return redirect('index')
-
-def profile(request):
-    
-    all_users = User.objects.all()
-    for each_user in all_users:
-        all_lists = each_user.owned_lists.all()
-        print (all_lists)
-
-    return render(request, 'index', all_lists)
-
+    return redirect('home')

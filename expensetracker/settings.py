@@ -49,9 +49,8 @@ INSTALLED_APPS = [
     'expenseapp',
 ]
 SITE_ID = 1
-LOGIN_REDIRECT_URL='/'
-LOGOUT_REDIRECT_URL='/home'
-
+LOGIN_REDIRECT_URL = '/home'
+LOGOUT_REDIRECT_URL = '/index'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 MIDDLEWARE = [
@@ -85,15 +84,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'expensetracker.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-#DATABASES = {
- #   'default': {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': BASE_DIR / 'db.sqlite3',
-    #}
-#}
 DATABASES = {
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
  }
@@ -137,7 +127,7 @@ USE_TZ = True
 
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
- 
+
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
