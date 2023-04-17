@@ -1,6 +1,6 @@
 # PP4-Expense-Tracker
 
-![logo](https://res.cloudinary.com/dlulkctls/image/upload/v1681688063/readme/expense-tracker-low-resolution-logo-white-on-transparent-background_wvp0bp.png)
+![logo](https://res.cloudinary.com/dlulkctls/image/upload/v1681688028/readme/expense-tracker-low-resolution-logo-black-on-transparent-background_s1l6zs.png)
 # Express Tracker Application
 
 
