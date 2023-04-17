@@ -47,6 +47,8 @@
     </div>
     <!--Display all Fields of Database -->
     <hr class="m-8">
+    <!-- loop through expenses context -->
+    <!-- for each expense in the expenses context(list of objects) -->
     {% for expense in expenses %}
     <div class="expense-row flex flex-wrap px-20 py-5 text-white">
         <span class="font-bold rounded-full">{{ expense.name }}</span>
@@ -153,6 +155,7 @@
 </div>
 <!--Script-->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+<!--Script for charts -->
 <script>
     const categoryies = []
     const categories_sums = []

@@ -1,24 +1,21 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import ExpenseForm
 from .models import Expenses
 from django.db.models import Sum
-from django.contrib.auth.models import User
 import datetime
 
 
 def index(request):
     return render(request, 'expenseapp/index.html')
 
-
 def home(request):
-    if request.method == "POST":
-        expense = ExpenseForm(request.POST)
-        if expense.is_valid():
-            expense.save()
-    expenses = Expenses.objects.all()
-    total_expenses = expenses.aggregate(Sum('amount'))
+    if request.method == "POST": # when the request is post
+        expense = ExpenseForm(request.POST)  # get data from ExpenseForm from post request
+        if expense.is_valid(): # check if data is valid
+            expense.save() # save data in the database
+    expenses = Expenses.objects.all() # to get access to the expenses. alll expense objects from the Expense Model
+    total_expenses = expenses.aggregate(Sum('amount')) # take all objects(expenses) together calculate the sum of expenses
 
     #Logic to calculate 365 days expenses.
     last_year = datetime.date.today() - datetime.timedelta(days=365)
@@ -39,7 +36,7 @@ def home(request):
 
     categorical_sums = Expenses.objects.filter().values('category').order_by('category').annotate(sum=Sum('amount'))
 
-    expense_form = ExpenseForm()
+    expense_form = ExpenseForm() # create an instance of ExpenseForm
     return render(request, 'expenseapp/home.html',
     {'expense_form': expense_form, 'expenses': expenses,
         'total_expenses': total_expenses,
@@ -48,21 +45,21 @@ def home(request):
         'daily_sums': daily_sums, 'categorical_sums': categorical_sums, })
 
 
-def edit(request, id):
-    expense = Expenses.objects.get(id=id)
-    expense_form = ExpenseForm(instance=expense)
-    if request.method == "POST":
-        expense = Expenses.objects.get(id=id)
-        form = ExpenseForm(request.POST, instance=expense)
+def edit(request, id): # to render form to edit a paticular expense.
+    expense = Expenses.objects.get(id=id)# store the id of a particular url id expense
+    expense_form = ExpenseForm(instance=expense)# pass expence as an instance to form
+    if request.method == "POST": # when the request is post
+        expense = Expenses.objects.get(id=id)# to get same id as above
+        form = ExpenseForm(request.POST, instance=expense) # to store new data that is been passed to form
         if form.is_valid():
-            form.save()
+            form.save()# save from
             return redirect('home')
     return render(request, 'expenseapp/edit.html',
     {'expense_form': expense_form})
 
 
-def delete(request, id):
+def delete(request, id): # passing in id of item to be deleted
     if request.method == 'POST' and 'delete' in request.POST:
-        expense = Expenses.objects.get(id=id)
-        expense.delete()
+        expense = Expenses.objects.get(id=id)# get the expense id
+        expense.delete()# delete that id
     return redirect('home')

@@ -116,19 +116,10 @@ In the future, we hope to add:
 
 Each User Story has defined outcome criteria to make it clear when the User Story has been completed. To view User stories click [here](https://github.com/users/kev-n14/projects/8). User stories were moved from Todo -> In Progress -> Done as each user story was completed.
 
-## Data Model
-I used Django AllAuth for the user authentication system. For users to sign up, log in and log out.
-
-![Database Schema]()
-## Testing
-
-Testing and results can be found [here]()
 
 ## Security Features and Defensive Design
-
 ### User Authentication
-
-- 
+- I used Django AllAuth for the user authentication system. For users to sign up, log in and log out.
 
 ### Form Validation
 If incorrect or empty data is added to a form, the form won't submit and a warning will appear to the user informing them what field raised the error message. 
@@ -244,14 +235,7 @@ No errors were found when passing through the official [(Jigsaw) validator](http
 
 3. As a Frequent User, I want to be able to view my expenses via bar, and pie charts.
     * At the bottom of the page the users can view a bar chart with a breakdown of all expenses.
-
-#### **Further Testing**
-* 
-#### **Known Bugs**
-* 
-
-### **Unfixed Bugs**
-* 
+ 
 ## Performance
 ---
 ### **Lighthouse Test**
@@ -313,10 +297,12 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 ## Credits
 ---
-* [Font Awesome](https://fontawesome.com/) -The icons in the footer for social media links and button icons. 
-* [W3schools](https://www.w3schools.com/) Tutorials - Research purposes
-* [Favicon](https://www.flaticon.com/free-icons/catholic/2) - used to generate tab icon.
-* [Unsplash](https://unsplash.com/) - provided the image for the Landing page. 
+* [Font Awesome](https://fontawesome.com/) 
+* [W3schools](https://www.w3schools.com/)
+* [Favicon](https://www.flaticon.com/free-icons/catholic/2) 
+* [Unsplash](https://unsplash.com/) 
 * [Tailwindcss](https://tailwindcss.com/docs/installation)
 * [W3C validator](https://validator.w3.org/)
 * [(Jigsaw) validator](https://validator.w3.org/nu/#textarea)
+* [Stackoverflow](https://stackoverflow.com/)
+* [slack](https://slack.com/intl/en-ie/)
