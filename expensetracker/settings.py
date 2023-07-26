@@ -88,6 +88,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'expensetracker.wsgi.application'
 
+AUTH_USER_MODEL = 'accounts.Account'
 
 DATABASES = {
      'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
