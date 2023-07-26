@@ -75,24 +75,44 @@
     <hr class="white">
     <div class=" px-20 py-5">
         <h3 class="font-bold text-white text-xl">Total :</h3>
+        {%if total_expenses.amount__sum == None %}
+        <span class="font-bold text-white text-center text-xl"> € 0.00 </span>
+
+        {% else %}
         <span class="font-bold text-white text-center text-xl">
             €{{ total_expenses.amount__sum|intcomma }}
         </span>
+        {% endif %}
     </div>
 </div>
 <!--Displaying Total for 365,30,7 Days-->
 <div class="flex">
     <div class="w-1/3 shadow-lg ml-10 rounded-lg">
         <h1 class="ml-10 font-bold text-green-400"> Last 365 Days</h1>
+        {%if yearly_sum.amount__sum == None %}
+        <h1 class="ml-10 my-5 text-2xl text-white font-bold"> € 0.00</h1>
+
+        {% else %}
         <h1 class="ml-10 my-5 text-2xl text-white font-bold"> €{{ yearly_sum.amount__sum|intcomma}}</h1>
+        {% endif %}
     </div>
+
     <div class="w-1/3 shadow-lg ml-10 rounded-lg">
         <h1 class="ml-10 font-bold text-green-400"> Last 30 Days</h1>
+        {%if monthly_sum.amount__sum == None %}
+        <h1 class="ml-10 my-5 text-2xl text-white font-bold"> € 0.00</h1>
+
+        {% else %}
         <h1 class="ml-10 my-5 text-2xl text-white font-bold"> €{{ monthly_sum.amount__sum|intcomma}}</h1>
+        {% endif %}
     </div>
     <div class="w-1/3 shadow-lg ml-10 rounded-lg">
         <h1 class="ml-10 font-bold text-green-400"> Last 7 Days</h1>
+        {%if weekly_sum.amount__sum == None %}
+        <h1 class="ml-10 my-5 text-2xl text-white font-bold"> € 0.00</h1>
+        {% else %}
         <h1 class="ml-10 my-5 text-2xl text-white font-bold"> €{{ weekly_sum.amount__sum|intcomma}}</h1>
+        {% endif %}
     </div>
 </div>
 <!--Displaying Total Sum From Past 30 Days-->

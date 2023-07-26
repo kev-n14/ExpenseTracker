@@ -26,11 +26,12 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
-development = os.environ.get('DEVELOPMENT', False)
+development = os.environ.get('DEVELOPMENT', True)
 DEBUG = development
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['kf-expense-tracker.herokuapp.com', 'localhost']
+#ALLOWED_HOSTS = ['kf-expense-tracker.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-kevn14-expensetracker-6p9309hizfx.ws-eu102.gitpod.io', 'localhost']
 
 
 # Application definition
@@ -50,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary',
     'expenseapp',
+    'accounts',
 ]
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/home'
