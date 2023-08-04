@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'accounts',
 ]
 SITE_ID = 1
-LOGIN_REDIRECT_URL = '/home'
+#LOGIN_REDIRECT_URL = '/home'
 LOGOUT_REDIRECT_URL = '/index'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'

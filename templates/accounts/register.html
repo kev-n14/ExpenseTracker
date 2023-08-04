@@ -1,1 +1,62 @@
-<h2>register</h2>
+{% extends "expenseapp/base.html" %}
+
+<!--{% load i18n %}-->
+<!--{% block head_title %}{% trans "Signup" %}{% endblock %}-->
+{% block content %}
+<section class="section-content padding-y">
+
+    <!-- ============================ COMPONENT REGISTER   ================================= -->
+    <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+        <article class="card-body">
+
+            <header class="mb-4">
+                <h4 class="card-title">Sign up</h4>
+            </header>
+            <form action="{% url 'register' %}" method="POST">
+                {% csrf_token %}
+                <div class="row mb-4">
+                    <div class="col">
+                        <div class="form-outline">
+                            <label class="form-label">First name</label>
+                            {{ form.first_name }}
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-outline">
+                            <label class="form-label">Last Name</label>
+                            {{ form.last_name }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label">Email address</label>
+                    {{ form.email}}
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label"></label>
+                    {{ form.password }}
+                </div>
+                <!-- Confirm Password input -->
+                <div class="form-outline mb-4">
+                    <label class="form-label"></label>
+                    {{form.confirm_password}}
+                </div>
+
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+
+
+            </form>
+        </article><!-- card-body.// -->
+        <p class="text-center mt-4">Have an account? <a href="">Log In</a></p>
+        <br><br>
+    </div> <!-- card .// -->
+
+</section>
+
+{% endblock %}

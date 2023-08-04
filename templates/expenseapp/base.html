@@ -12,6 +12,10 @@
         href="https://res.cloudinary.com/dlulkctls/image/upload/v1681590261/expense_qyhdfz.png">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <!-- Bootstrap4 files-->
+
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
+
     <title>Expense Tracker</title>
 </head>
 
@@ -27,17 +31,17 @@
                     {% if user.is_authenticated %}
                     <!-- only show if user is logged in - logout button-->
                     <span class="text-white text-bold text-xl">Hello {{request.user}}, </span><!-- show user name -->
-                    <span> <a href="{%url 'account_logout'%}"
+                    <span> <a href="{%url 'logout'%}"
                             class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Logout</a>
                     </span>
                     {%else%}
                     <!-- if no user is logged in-->
                     <span class="text-white text-bold text-xl">Welcome, Become a Member </span>
 
-                    <span> <a href="{%url 'account_login'%}"
+                    <span> <a href="{%url 'login'%}"
                             class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Login</a>
                     </span>
-                    <span> <a href="{%url 'account_signup'%}"
+                    <span> <a href="{%url 'register'%}"
                             class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Sign
                             Up</a>
                     </span>
