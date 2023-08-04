@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import RegistrationForm
 from .models import Account
 from django.contrib import messages, auth
+from django.contrib.auth.decorators import login_required
 
 def register(request):
     if request.method == 'POST':
@@ -36,11 +37,15 @@ def signin(request):
             messages.success(request, 'You Are Signed In')
             return redirect('home')
         else:
-            messages.error(request, 'Invalid login credentials')
+            messages.error(request, 'Invalid Login Credentials')
             return redirect('signin')
 
     return render(request, 'accounts/signin.html')
 
 
+@login_required(login_url = 'signin')
 def logout(request):
-    return redirect('expenseapp/index.html')
+    auth.logout(request)
+    messages.success(request, 'You are logged out.')
+    
+    return render(request, 'accounts/signin.html')

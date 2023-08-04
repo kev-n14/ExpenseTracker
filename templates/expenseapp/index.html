@@ -1,4 +1,5 @@
 {% extends "expenseapp/base.html" %}
+{% load static %}
 {% load humanize %}
 {% load i18n %}
 {% load account socialaccount %}
@@ -6,30 +7,38 @@
 {%block content %}
 <!-- Display of hero image -->
 <div class="relative max-h-full  bg-white m-20 rounded shadow-lg">
+    {% include 'includes/alerts.html' %}
     <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681688988/expensetracker/leone-venter-VieM9BdZKFo-unsplash_s17qat.jpg"
         alt="landing page image" />
-    <div class="flex">
-        <div class=" absolute  h-fit  top-20 left-5 w-1/2 shadow-lg ml-10 bg-gray-100">
-            <h1 class="absolute text-5xl text-blue-400 inset-10 -translate-x-1/2 -translate-y-1/2 mt-0 m-10">
+    <div class="card-img-overlay w-50 mt-10 ">
+        <div class="mt-20 ">
+            <h1 class="text-5xl text-blue-400 inset-10 -translate-x-1/2 -translate-y-1/2 mt-10 text-center">
                 EXPENSE TRACKER</h1>
-            <h2 class="absolute text-3xl text-amber-400 top-2/4 left-22 -translate-x-1/2 p-20 mt-10  tracking-wide">
-                Keep track of all your expenses in one place.
-                Expenses Tracker will help you to do just that. Join us today and take control of
-                your expenses.</h2>
-            <span class="absolute text-3xl text-amber-400 top-80 left-0 h-16 w-16 p-0 mt-20  tracking-wide">
-                <a href="{%url 'signin'%}"
-                    class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full ">Login</a>
-            </span>
-            <div>
-                <h3>Become a memeber today </h3>
-                <span class=" text-3xl text-amber-400 top-80 left-0 h-16 w-16 p-0 mt-20  tracking-wide">
+        </div>
+
+
+        <h2 class=" card-text text-3xl text-amber-400 top-2/4 left-22 -translate-x-1/2 p-20 mt-10  tracking-wide">
+            Keep track of all your expenses in one place.
+            Expenses Tracker will help you to do just that. Join us today and take control of
+            your expenses.</h2>
+        <div class="d-flex flex-row">
+            <div class="mx-20 p-2">
+                <h3>Become a memeber today! </h3>
+                <span class=" text-3xl text-amber-400 h-16 w-16">
                     <a href="{%url 'register'%}"
                         class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full ">Sign
                         Up</a>
                 </span>
             </div>
-
+            <div class="pt-10 p-2">
+                <h3>Already a Member </h3>
+                <span class=" text-3xl text-amber-400 top-80  h-16 w-16 p-0 mt-20  tracking-wide">
+                    <a href="{%url 'signin'%}"
+                        class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full ">Login</a>
+                </span>
+            </div>
         </div>
+
     </div>
 </div>
 {% endblock %}
