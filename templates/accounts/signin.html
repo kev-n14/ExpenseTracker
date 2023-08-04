@@ -1,6 +1,7 @@
 {% extends "expenseapp/base.html" %}
 
 {% block content %}
+
 <section class="section-content padding-y">
 
     <!-- ============================ COMPONENT REGISTER   ================================= -->
@@ -9,35 +10,22 @@
             {% include 'includes/alerts.html' %}
 
             <header class="mb-4">
-                <h4 class="card-title">Sign up</h4>
+                <h4 class="card-title">Sign In</h4>
             </header>
-            <form action="{% url 'register' %}" method="POST">
+            <form action="{% url 'signin' %}" method="POST">
                 {% csrf_token %}
-                <div class="row mb-4">
-                    <div class="col">
-                        <div class="form-outline">
-                            <label class="form-label">First name</label>
-                            {{ form.first_name }}
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-outline">
-                            <label class="form-label">Last Name</label>
-                            {{ form.last_name }}
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                     <label class="form-label">Email address</label>
-                    {{ form.email}}
+                    <input type="email" class="form-control" placeholder="Email Address" name="email">
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <label class="form-label"></label>
-                    {{ form.password }}
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" name="password">
                 </div>
                 <!-- Confirm Password input -->
                 <div class="form-outline mb-4">
@@ -47,17 +35,19 @@
 
 
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+                <button type="submit" class="btn btn-primary btn-block mb-4">Sign In</button>
 
                 {{ form.email.errors}}
                 {{ form.non_field_errors }}
 
             </form>
         </article><!-- card-body.// -->
-        <p class="text-center mt-4">Have an account? <a href="{%url 'signin'%}">Log In</a></p>
+        <p class="text-center mt-4">Don't have account? <a href="{% url 'register' %}">Sign up</a></p>
         <br><br>
     </div> <!-- card .// -->
 
 </section>
+
+
 
 {% endblock %}
