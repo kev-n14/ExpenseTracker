@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm
 from .models import Account
-
+from django.contrib import messages
 
 def register(request):
     if request.method == 'POST':
@@ -14,6 +14,8 @@ def register(request):
             username = email.split("@")[0]
             user = Account.objects.create_user(first_name=first_name, last_name=last_name, email=email, username=username, password=password)
             user.save()
+            messages.success(request, 'Sign Up Successful')
+            return redirect('register')
     else:
         form = RegistrationForm()
     context = {

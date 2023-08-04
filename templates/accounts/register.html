@@ -8,6 +8,7 @@
     <!-- ============================ COMPONENT REGISTER   ================================= -->
     <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
         <article class="card-body">
+            {% include 'includes/alerts.html' %}
 
             <header class="mb-4">
                 <h4 class="card-title">Sign up</h4>
@@ -50,6 +51,8 @@
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
 
+                {{ form.email.errors}}
+                {{ form.non_field_errors }}
 
             </form>
         </article><!-- card-body.// -->
