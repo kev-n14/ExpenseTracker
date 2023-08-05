@@ -18,20 +18,25 @@
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" />
     <!-- custom javascript -->
     <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
+    <!-- custom jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <title>Expense Tracker</title>
 </head>
 
 <body>
-    <!-- navbar -->
-    {% include 'includes/navbar.html' %}
+    <div class="min-h-screen bg-gradient-to-r from-purple-500 to-pink-500 ">
+        <!-- navbar -->
+        {% include 'includes/navbar.html' %}
 
-    {%block content %}
-    <!-- content -->
-    {% endblock %}
+        {%block content %}
+        <!-- content -->
+        {% endblock %}
 
-    <!-- footer -->
-    {% include 'includes/footer.html' %}
+        <!-- footer -->
+        {% include 'includes/footer.html' %}
+
+    </div>
 
 </body>
 

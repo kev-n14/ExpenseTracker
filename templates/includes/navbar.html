@@ -1,40 +1,39 @@
 {% load static %}
-
-<div class="min-h-screen bg-gradient-to-r from-purple-500 to-pink-500">
-    <!-- Navigation Bar-->
-    <nav class="shadow-lg p-5">
-        <div class="container flex flex-wrap justify-between items-center mx-auto">
-            {% if user.is_authenticated %}
-            <a href="/home" class="flex">
+<!-- Navigation Bar-->
+<nav class="shadow-lg p-5">
+    <div class="container flex flex-wrap justify-between items-center mx-auto">
+        {% if user.is_authenticated %}
+        <a href="/home" class="flex">
+            <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681688988/expensetracker/expense-tracker-logo_rriasg.png"
+                class="h-12 mr-6" alt="Expense Logo" /></a>
+        <div>
+            {%else%}
+            <a href="/index" class="flex">
                 <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681688988/expensetracker/expense-tracker-logo_rriasg.png"
                     class="h-12 mr-6" alt="Expense Logo" /></a>
+            {%endif%}
             <div>
+                {% if user.is_authenticated %}
+                <!-- only show if user is logged in - logout button-->
+                <span class="text-white text-bold text-xl">Hello {{user.first_name}}, </span><!-- show user name -->
+                <span> <a href="#" class="text-white text-bold text-xl">DashBoard</a>
+                </span>
+                <span> <a href="{%url 'logout'%}"
+                        class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Logout</a>
+                </span>
                 {%else%}
-                <a href="/index" class="flex">
-                    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681688988/expensetracker/expense-tracker-logo_rriasg.png"
-                        class="h-12 mr-6" alt="Expense Logo" /></a>
-                {%endif%}
-                <div>
-                    {% if user.is_authenticated %}
-                    <!-- only show if user is logged in - logout button-->
-                    <span class="text-white text-bold text-xl">Hello {{user.first_name}}, </span><!-- show user name -->
-                    <span> <a href="#" class="text-white text-bold text-xl">DashBoard</a>
-                    </span>
-                    <span> <a href="{%url 'logout'%}"
-                            class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Logout</a>
-                    </span>
-                    {%else%}
-                    <!-- if no user is logged in-->
-                    <span class="text-white text-bold text-xl">Welcome, Become a Member </span>
+                <!-- if no user is logged in-->
+                <span class="text-white text-bold text-xl">Welcome, </span>
 
-                    <span> <a href="{%url 'signin'%}"
-                            class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Login</a>
-                    </span>
-                    <span> <a href="{%url 'register'%}"
-                            class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Sign
-                            Up</a>
-                    </span>
-                    {%endif%}
-                </div>
+                <span> <a href="{%url 'signin'%}"
+                        class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Login</a>
+                </span>
+                <span> <a href="{%url 'register'%}"
+                        class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">Sign
+                        Up</a>
+                </span>
+                {%endif%}
             </div>
-    </nav>
+        </div>
+
+</nav>

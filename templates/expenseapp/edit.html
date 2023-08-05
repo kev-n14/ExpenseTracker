@@ -1,6 +1,7 @@
 {% extends "expenseapp/base.html" %}
 {%block content %}
 <!-- Form to edit an entry-->
+
 <form method="POST" class="shadow-lg m-10">
     {% csrf_token %}
     <div class="px-10 py-10 flex ">
@@ -30,11 +31,14 @@
                 class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full"
                 type="submit">Update</button>
         </div>
-        <div class="px-10 py-10">
-            <button
-                class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full"
-                type="submit"><i class="fa-solid fa-turn-down-left"></i>Back</button>
+        <div class="px-10 py-12">
+            <a href="{% url 'home' %}"
+                class="bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 px-5 py-2 text-white font-bold rounded-full">
+                <i class="fa-solid fa-turn-down-left"></i> Back
+            </a>
         </div>
     </div>
 </form>
+
+
 {% endblock %}
