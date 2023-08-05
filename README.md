@@ -1,71 +1,83 @@
 # PP4-Expense-Tracker
 
-![logo](https://res.cloudinary.com/dlulkctls/image/upload/v1681688028/readme/expense-tracker-low-resolution-logo-black-on-transparent-background_s1l6zs.png)
-# Express Tracker Application
+![Expense Tracker Logo](https://res.cloudinary.com/dlulkctls/image/upload/v1681688028/readme/expense-tracker-low-resolution-logo-black-on-transparent-background_s1l6zs.png)
 
+## Express Tracker Application
 
-This site is Expense Tracker that users can use to add expenses to a joined expense tracker. The expense tracker website can only be accessed by logged-in users. This website stores all expenses inputted by the users and provides a yearly, monthly, and weekly summary. Users can also view a breakdown of the expenses by category. Users also can edit and delete expenses. The Expense Track website is the perfect place to keep track of all your finances.
+Welcome to the Expense Tracker application! This platform enables users to conveniently manage their expenses. The website ensures that only registered users can access and utilize its features. By leveraging this platform, users can effortlessly record and categorize their expenses. It provides insightful summaries on a yearly, monthly, and weekly basis, as well as a categorized breakdown of expenses. Users are also empowered to modify or remove entries. The Expense Tracker website is your ideal companion for maintaining a detailed record of your financial activities.
 
 ## Features
----
-### **Landing Page**
-The Landing page greets the user with a bright colorful purple view with a contrasting white large image and a brief message about what the site is about. The user is invited to log in or sign up.
 
-![Landing Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687776/readme/landing-page_qntp7b.png)
+### Landing Page
 
-### **Navigation Bar**
-The Navigation bar presents the user with the 'Expense Tracker' Logo which is a link to the home page. The Navigation bar also contains a greeting message inviting the visitor to become a member. Two buttons are available to the visitor to 'log in' if they are a member and a 'sign up' button if they are not a member.
-
-![Navigation Bar](https://res.cloudinary.com/dlulkctls/image/upload/v1681687779/readme/nav-bar_v4oie3.png)
-
-### **Sign Up Page** 
-The Signup user is invited to sign up by entering their Username, Email address, and password and re-entering the password. When the user enters these details.
-If the user is already a member they can click on the 'Sign In' button, the user is then transferred to the sign-in page.
-![Sign Up Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687780/readme/sign-up-page_szpuop.png)
+<p>The vibrant and inviting landing page instantly captivates users with its colorful purple theme, featuring a striking white image and a concise introduction to the site's purpose. Users are warmly invited to log in or sign up.</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1691253135/readme/landing_page_eq3foo.png" alt="Landing Page" style="width:800px;"/>
 
 
-### **Login Page**
-In the Login Page, the user is invited to enter a username and password and click on the 'Sign In' button, If the username and password match the credentials stored the user is transferred to the home page of the expense tracker website. If the user is not a member they can click on the 'Sign Up' button, and the user is then transferred to the sign-up page.
+### Navigation Bar
 
-![Login Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687768/readme/login-page_zwrljf.png)
+<p>The navigation bar prominently presents the "Expense Tracker" logo, serving as a direct link to the home page. It also includes a personalized greeting and offers options to "Log In" for existing users or "Sign Up" for new ones.</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691253134/readme/navbar_rqrxpi.png" alt="Navigation Bar" style="width:800px;"/>
 
 
-### **Signout Page** 
-When the user clicks on the logout button in the navigation bar they will be transferred to the sign-out page. The user is greeted with a message asking if they are shown they would like to log out. When the user clicks on the sign-out button the user the brought to the index page.
+### User Navigation Bar
 
-![Signout Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687767/readme/sign-out-page_bhannp.png)
+<p>The user navigation bar features the distinctive "Expense Tracker" logo, acting as a seamless gateway to the home page. Complemented by a personalized greeting, the navigation bar extends an invitation for users to engage further, providing the choice to "Log In" if they are existing users or "Sign Up" if they are newcomers.</p>
 
-### **The Add Expenses section**
-The Add Expenses section allows users to add items to the expense tracker. Items added take the properties of 'Expense Name', 'Amount', and 'Category'.
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691253136/readme/navbar_with_user_name_iaandi.png" alt="User Navigation Bar" style="width:800px;"/>
 
-![The Add Expenses section](https://res.cloudinary.com/dlulkctls/image/upload/v1681687770/readme/index-page_eyuej3.png)
+### Footer Section
+
+<p>The footer section serves as an essential component of the Expense Tracker application, offering users a comprehensive way to navigate through the platform. It prominently showcases the iconic "Expense Tracker" logo, ensuring easy access to the home page. The footer also features a warm and inviting greeting, inviting users to explore the site further by either "Logging In" as existing users or "Signing Up" as new members.</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691253135/readme/footer1_xy4hal.png" alt="Footer Section" style="width:800px;"/>
 
 
 
-### **Expense Form Section**
-The Expense Form Section displays all expenses added by the user. This section provides each item with an edit and deletes button. The buttons are provided to the user if they need to edit an expense or delete an expense from the form.
-The total of all expenses is displayed at the bottom of the expense form.
+### Sign Up Page
 
-![Expense Form Section](https://res.cloudinary.com/dlulkctls/image/upload/v1681687774/readme/expense-form_yubcta.png)
-
-
-### **Expense Summary and Charts**
-The user is greeted with a summary of the expenses from the past 30 days and a categorical breakdown of the expenses. On this page, the user will also find their expenses displayed by bar charts. 
-
-![Expense Summmary and Charts](https://res.cloudinary.com/dlulkctls/image/upload/v1681687778/readme/expense-summary-chart_olfueu.png)
+<p>The user-friendly sign-up page guides users through a straightforward process to create an account. By providing their desired Username, Email address, and secure password, users can swiftly register. Existing members can effortlessly access the "Sign In" page.</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691253140/readme/sign_up_page_frvxrq.png" alt="Sign Up Page" style="width:800px;"/>
 
 
-### **Edit Page**
-The Edit Page allows the user to edit an expense that has been added to the database. The user can edit the 'Expense Name', 'Expense Amount', and 'Expense category' from this page.
+### Login Page
 
-![Edit Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681687768/readme/edit-page_e8gmgl.png)
+<p>On the login page, users can securely log in by entering their credentials. Upon successful authentication, users are redirected to the expense tracker's home page. New users can also access the "Sign Up" option to create an account.</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691253141/readme/sign_in_page_ukdddy.png" alt="Login Page" style="width:800px;"/>
 
+
+### Signout Page
+
+<p>Users can conveniently log out by clicking the "Logout" button in the navigation bar, leading them to the Landing page. A confirmation prompt ensures a smooth logout process, enhancing user experience.</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691272243/readme/signout_ykpxdg.png" alt="Signout Page" style="width:800px;"/>
+
+
+### Adding Expenses
+
+<p>Effortlessly track your expenses by adding items through the intuitive "Add Expenses" section. Provide essential details such as "Expense Name," "Amount," and "Category."</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681687770/readme/index-page_eyuej3.png" alt="Add Expenses Section" style="width:800px;"/>
+
+
+### Expense Form Section
+
+<p>Review and manage your expenses seamlessly within the Expense Form Section. Edit or delete expenses as needed, and view the total expenses conveniently displayed at the bottom.</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681687774/readme/expense-form_yubcta.png" alt="Expense Form  Section" style="width:800px;"/>
+
+
+### Expense Summary and Charts
+
+<p>Gain valuable insights with a comprehensive summary of expenses from the past 30 days, along with a detailed breakdown by category. Interactive bar charts provide a visual representation of your financial data.</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681687778/readme/expense-summary-chart_olfueu.png" alt="Expense Summary and Charts" style="width:800px;"/>
+
+
+### Edit Page
+
+<p>Easily refine expense details using the Edit Page. Modify "Expense Name," "Expense Amount," and "Expense Category" with utmost convenience.</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681687768/readme/edit-page_e8gmgl.png" alt="Edit Page" style="width:800px;"/>
 
 ### **Features Left to Implement**
 In the future, we hope to add:
-* Separate user expense forms specific to each user.
 * forgotten password option for the user.
-* downloadable pdfs of expenses.
+* downloadable PDF's of expenses.
 
 
 ## User Experience (UX)
@@ -116,17 +128,60 @@ In the future, we hope to add:
 
 Each User Story has defined outcome criteria to make it clear when the User Story has been completed. To view User stories click [here](https://github.com/users/kev-n14/projects/8). User stories were moved from Todo -> In Progress -> Done as each user story was completed.
 
+## Data Model
+
+Throughout this project, I've adhered to the principles of Object-Oriented Programming (OOP) and utilized Django's Class-Based Generic Views for efficient development.
+
+The data model of the Expense Tracker application consists of the following entities:
+
+### Account
+- Fields: `id`, `first_name`, `last_name`, `username`, `email`, `date_joined`, `last_joined`, `is_admin`, `is_staff`, `is_active`, `is_superadmin`
+- This entity manages user accounts and authentication.
+
+### Expenses
+- Fields: `id`, `user`, `name`, `amount`, `category`, `date`
+- The `Expenses` model records user expenses and is associated with the user account that added them.
+
+
+<p>The following diagram illustrates the database schema:</p>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691270222/readme/db-schema_la9k57.png" alt="ER-diagram" style="width:600px;"/>
+
 
 ## Security Features and Defensive Design
 ### User Authentication
-- I used Django AllAuth for the user authentication system. For users to sign up, log in and log out.
+User authentication is a critical component of the Expense Tracker application's security strategy. The application employs a robust user authentication system that ensures secure access to user accounts and sensitive data.
+
+### Security Measures
+The signin function incorporates several security measures to ensure the authentication process is secure:
+
+
+- **Input Validation:** The function validates the input fields, such as email and password, to prevent common forms of attacks like SQL injection and cross-site scripting (XSS).
+
+- **Password Hashing:** The function does not store passwords in plain text. Instead, Django's authentication system uses secure password hashing techniques to protect user passwords.
+
+- **Authentication and Authorization:** The auth.authenticate function verifies the provided email and password against the stored credentials in a secure manner. Upon successful authentication, the user is granted access to the application's authorized sections.
+
+- **Session Management:** The use of auth.login establishes a secure user session. Django handles session management, ensuring that session data is protected and session cookies are secure.
+
+- **Error Handling:** The function uses the messages framework to provide user-friendly error messages, helping users understand login failures and providing no hints about the specific cause of failure to potential attackers.
+
+- **Redirects:** In case of successful login, users are securely redirected to the appropriate section of the application. In case of failure, they are redirected back to the login page with an appropriate error message.
+
+**Administrative Security**
+- **Django Honeypot Admin:**
+To enhance security, the Expense Tracker application utilizes Django Honeypot Admin. This package provides an extra layer of protection against automated attacks and malicious bots. By creating hidden form fields that only bots interact with, Django Honeypot Admin can detect and prevent unauthorized access attempts.
+
+### Conclusion
+The user authentication process in the Expense Tracker application is designed with security and defensive measures in mind. By implementing these practices, the application ensures that user accounts and sensitive data are protected from unauthorized access and potential threats.
+
+
 
 ### Form Validation
-If incorrect or empty data is added to a form, the form won't submit and a warning will appear to the user informing them what field raised the error message. 
+The Expense Tracker application employs rigorous form validation to ensure the accuracy and integrity of data submitted. If incorrect or incomplete information is provided in a form, the submission will be prevented, and a user-friendly warning message will be displayed. This message informs users about the specific field that triggered the error, enabling them to correct the issue effectively.
 
 ### Database Security
-The database URL and secret key are stored in the env.py file.
-(CSRF) Cross-Site Request Forgery tokens were used on all forms throughout this website.
+To increase security, sensitive information such as the database URL and secret key are stored within the env.py file. This practice safeguards critical data from unauthorized access and potential breaches.
+Additionally, the application leverages (CSRF) Cross-Site Request Forgery tokens across all its forms. These tokens serve as a safeguard against malicious attacks, ensuring that requests submitted to the website originate from legitimate sources. By incorporating CSRF tokens, the Expense Tracker application enhances its resistance to potential cross-site scripting (XSS) and request forgery vulnerabilities, bolstering overall security.
 
 ## Technologies Used
 ---
@@ -147,6 +202,8 @@ The database URL and secret key are stored in the env.py file.
     * integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
 1. [Tailwindcss](https://tailwindcss.com/):
     * Tailwind CSS is an open-source CSS framework. The main feature of this library is that, unlike other CSS frameworks like Bootstrap, it does not provide a series of predefined classes for elements such as buttons or tables.
+1.  [Bootstrap](https://getbootstrap.com/):
+    * Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development.
 1. [Chart. js](https://www.chartjs.org/):
     * Chart.js is a free, open-source JavaScript library for data visualization, which supports eight chart types: bar, line, area, pie, bubble, radar, polar, and scatter.
 1. [Node. js](https://nodejs.org/en):
@@ -191,7 +248,9 @@ No errors were found when passing through the official [(Jigsaw) validator](http
 * [PEP8 Code Institute validator:] (https://pep8ci.herokuapp.com/#)
     * A few minor errors:
         * Line too long error
-
+* **Javascript**
+* [JSHint] (https://jshint.com/)
+    * No Errors Detected
 ### Testing User Stories from the User Experience (UX) Section
 #### **First Time Visitor Goals**
 1. As a First Time Visitor, I want to be able to understand the main purpose of this site. I should be to determine the aim of the site effortlessly and in a short period.
@@ -294,6 +353,9 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
 1. Type **'Enter'** to create the local clone.
 
+## Conclusion
+
+The Expense Tracker application is your go-to tool for efficiently managing and tracking your expenses. With its user-friendly interface, insightful summaries, and customizable features, it empowers you to take control of your financial activities. Start using the Expense Tracker today and embark on a journey towards better financial management!
 
 ## Credits
 ---
