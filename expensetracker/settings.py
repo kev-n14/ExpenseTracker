@@ -30,8 +30,8 @@ development = os.environ.get('DEVELOPMENT', False)
 DEBUG = development
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-#ALLOWED_HOSTS = ['kf-expense-tracker.herokuapp.com', 'localhost']
-ALLOWED_HOSTS = ['8000-kevn14-expensetracker-6p9309hizfx.ws-eu102.gitpod.io', 'localhost']
+ALLOWED_HOSTS = ['kf-expense-tracker.herokuapp.com', 'localhost']
+#ALLOWED_HOSTS = ['8000-kevn14-expensetracker-6p9309hizfx.ws-eu102.gitpod.io', 'localhost']
 
 
 # Application definition
