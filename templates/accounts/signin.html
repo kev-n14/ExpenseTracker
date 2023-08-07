@@ -9,7 +9,7 @@
         <article class="card-body">
             {% include 'includes/alerts.html' %}
             <header class="mb-4">
-                <h4 class="card-title">Sign In</h4>
+                <h4 class="card-title text-3xl font-bold">Sign In</h4>
             </header>
             <form action="{% url 'signin' %}" method="POST">
                 {% csrf_token %}

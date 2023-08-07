@@ -4,13 +4,13 @@
             <div class="sm:flex sm:items-center sm:justify-between">
                 {% if user.is_authenticated %}
                 <a href="/home" class="flex items-center mb-4 sm:mb-0">
-                    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681688988/expensetracker/expense-tracker-low-resolution-logo-black-on-transparent-background_y64tmq.png"
+                    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681688988/expensetracker/expense-tracker-logo_rriasg.png"
                         class="h-8 mr-3" alt="Expense Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
                 </a>
                 {%else%}
                 <a href="/index" class="flex items-center mb-4 sm:mb-0">
-                    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681688988/expensetracker/expense-tracker-low-resolution-logo-black-on-transparent-background_y64tmq.png"
+                    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681688988/expensetracker/expense-tracker-logo_rriasg.png"
                         class="h-8 mr-3" alt="Expense Logo" />
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
                 </a>
@@ -37,9 +37,15 @@
                 </ul>
             </div>
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+            {% if user.is_authenticated %}
+            <span class="block text-sm text-white sm:text-center dark:text-white">© 2023 <a href="/home"
+                    class="text-white hover:underline">Expense Tracker</a>. All Rights
+                Reserved.</span>
+            {%else%}
             <span class="block text-sm text-white sm:text-center dark:text-white">© 2023 <a href="/index"
                     class="text-white hover:underline">Expense Tracker</a>. All Rights
                 Reserved.</span>
+            {%endif%}
         </div>
     </footer>
     </div>

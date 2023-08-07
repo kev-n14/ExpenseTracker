@@ -76,36 +76,73 @@ Welcome to the Expense Tracker application! This platform enables users to conve
 
 ### **Features Left to Implement**
 In the future, we hope to add:
-* forgotten password option for the user.
-* downloadable PDF's of expenses.
+* Forgotten password option for the user.
+* Downloadable PDF's of expenses.
 
 
 ## User Experience (UX)
 ---
-* ### **User stories**
+### **EPIC'S**
 
-    * **First-Time Visitor Goals**
-        1. As a First Time Visitor, I want to be able to understand the main purpose of this site. I should be to determine the aim of the site effortlessly and in a short period.
+* **Epic| Site Introduction and User Account Management**
 
-        2. As a First Time Visitor, I want to be able to Sign up and create an account.
+1. As a First Time Visitor, I want to understand the main purpose of the site effortlessly.
+    - <p>The User is first presented with a brief text explaining the purpose of the website.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691391342/readme/user%20stories/landing_page_layout_teaq9u.png" alt="Landing Page Text" style="width:400px;"/>
+2. As a First Time Visitor, I want to be able to Sign up and create an account.
+    - <p>Users can gain navigate to the Sign Up page via the Sign Up button on the navbar or on the main section of the index page.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390785/readme/user%20stories/login-navbar_dzqdbx.png" alt="Navbar Sign Up Button" style="width:400px;"/>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390876/readme/user%20stories/sign_up_index_page_tfnrbr.png" alt="Index Page Sign Up Button" style="width:400px;"/>
+3. As a First Time Visitor, I want to be able to log in.
+    - <p>Users have the option to initiate the Sign In process either by selecting the "Sign In" button located on the navigation bar or by clicking the "Sign In" button prominently featured in the main section of the index page. Upon selection, users will be seamlessly directed to the dedicated Sign In Page. Here, they can conveniently input their credentials to successfully complete the sign-in procedure.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390785/readme/user%20stories/login-navbar_dzqdbx.png" alt="Navbar Sign In Button" style="width:400px;"/>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390820/readme/user%20stories/login_index_page_fl4peh.png" alt="Index Page Sign In Button" style="width:400px;"/>
+<hr>
 
-        3. As a First Time Visitor, I want to be to log in.
+* **Epic| Summary and Management of Weekly Expenses**
 
-    * **Returning Visitor Goals**
-        1. As a Returning Visitor, I want to be able to get a summary of my expenses over a week.
+1. As a Returning Visitor, I want to get a summary of my expenses over a week.
+ - <p></p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/Weekly_expenses_jjnk9t.png" alt="weekly expenses" style="width:400px;"/>
+2. As a Returning Visitor, I want to be able to Sign In to view my expenses and to be able to sign out.
+ - <p>Once the USer is Signed in. They can view all their expenses.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/Expenses_q3xveb.png" alt="Expenses" style="width:400px;"/>
 
-        2. As a Returning Visitor, I want to be able to Sign In to view my expenses and to be able to sign out.
+- <p>The User can log out via the "Logout" Button.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/logout_italnn.png" alt="logout" style="width:400px;"/>
 
-        3. As a Returning Visitor, I want to add expenses to my expenses list.
+3. As a Returning Visitor, I want to add expenses to my expenses list.
+ - <p>Users can add expenses via the "Add Expenses" Section on the home page. By filling in the required fields and clicking the "ADD" Button.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/add_expenses_y5qypf.png" alt="Add Expenses" style="width:400px;"/>
+<hr>
 
-    * **Frequent User Goals**
-        1. As a Frequent User, I want to be able to get a summary of my expenses over a month, or year.
+* **Epic| Summary and Categorization of Monthly and Yearly Expenses**
 
-        2. As a Frequent User, I want to be able to categorize my expenses.
+1. As a Frequent User, I want to get a summary of my expenses over a month or year.
+ - <p>User can view thier expenses from the past 30 days.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393856/readme/user%20stories/past_30_days_rdxeg0.png" alt="monthly expenses" style="width:400px;"/>
+     - <p>User can view thier expenses from the past year.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691394023/readme/user%20stories/yearly_expenses_uryykr.png" alt="monthly expenses" style="width:400px;"/>
+2. As a Frequent User, I want to be able to categorize my expenses.
+ - <p>The User can view a brekdown of their expenses by category.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691394170/readme/user%20stories/categorize_expenses_n2ltjt.png" alt="Category expenses" style="width:400px;"/>
+    
 
-        3. As a Frequent User, I want to be able to view my expenses via bar, and pie charts.
+<hr>
 
-* ### **Design**
+* **Epic| Visualization of Expenses Data**
+
+1. As a Frequent User, I want to be able to view my expenses via bar and pie charts.
+ - <p>A chart illustraion of the user's expenses.</p>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691394390/readme/user%20stories/expenses_chart_rna826.png" alt="" style="width:400px;"/>
+<hr>
+
+## Mapping User Stories
+ <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691397261/readme/user%20stories/Mapping_t27rgj.png" alt="" style="width:900px;"/>
+
+<hr>
+
+* ## **Design**
     * **Colour Scheme**
         * As this site is based around expense tracking, the aim was to keep it professional but with a bit of playfulness by adding vibrant color.
         * The background color throughout all pages is a subtly gradient of dark to light purple to add a pop of color.
@@ -117,6 +154,9 @@ In the future, we hope to add:
          * On the Landing page, the hero image is bright, white, and large to catch the user's attention. 
          * To the top right of the image is a cup of coffee with cherries and a keyboard and pen. To make for a calming image and an inviting experience.
  
+
+
+	
 
 * ### **Wireframes**
     * Edit Page - [View](https://res.cloudinary.com/dlulkctls/image/upload/v1681687467/wireframes/EDIT_PAGE_wjxdgb.png)
@@ -299,19 +339,19 @@ No errors were found when passing through the official [(Jigsaw) validator](http
 ---
 ### **Lighthouse Test**
 * Landing Page
-![Landing Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681689346/readme/lighthouse/landing_page_result_rro0zs.png)
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681689346/readme/lighthouse/landing_page_result_rro0zs.png" alt="Landing Page" style="width:800px;"/>
 
 * Edit Page
-![Gallery Page](https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/edit-page-result_yur85u.png)
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/edit-page-result_yur85u.png" alt="Gallery Page" style="width:800px;"/>
 
 * Sign Up Page 
-![Sign Up Page ](https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/sign-up-result_myoo62.png)
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/sign-up-result_myoo62.png" alt="Sign Up Page" style="width:800px;"/>
 
 * Sign Out Page 
-![Sign Out Page  ](https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/sign-out-result_rvga3v.png)
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/sign-out-result_rvga3v.png" alt="Sign Out Page" style="width:800px;"/>
 
 * Sign In Page 
-![Sign In Page  ](https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/sign-in-result_tdzfc7.png)
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1681691194/readme/lighthouse/sign-in-result_tdzfc7.png" alt="Sign In Page" style="width:800px;"/>
 
 
 ## Deployment
@@ -364,7 +404,9 @@ The Expense Tracker application is your go-to tool for efficiently managing and 
 * [Favicon](https://www.flaticon.com/free-icons/catholic/2) 
 * [Unsplash](https://unsplash.com/) 
 * [Tailwindcss](https://tailwindcss.com/docs/installation)
+* [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 * [W3C validator](https://validator.w3.org/)
+* [JSHint](https://jshint.com/)
 * [(Jigsaw) validator](https://validator.w3.org/nu/#textarea)
 * [Stackoverflow](https://stackoverflow.com/)
-* [slack](https://slack.com/intl/en-ie/)
+* [Slack](https://slack.com/intl/en-ie/)
