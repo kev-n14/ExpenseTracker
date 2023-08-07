@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 
-
 class MyAccountManager(BaseUserManager):
     def create_user(self, first_name, last_name, username, email, password=None):
         if not email:
@@ -24,11 +23,11 @@ class MyAccountManager(BaseUserManager):
 
     def create_superuser(self, first_name, last_name, email, username, password):
         user = self.create_user(
-            email = self.normalize_email(email),
-            username = username,
-            password = password,
-            first_name = first_name,
-            last_name = last_name,
+            email=self.normalize_email(email),
+            username=username,
+            password=password,
+            first_name=first_name,
+            last_name=last_name,
         )
         user.is_admin = True
         user.is_active = True
@@ -53,7 +52,6 @@ class Account(AbstractBaseUser):
     is_active = models.BooleanField(default=False)
     is_superadmin = models.BooleanField(default=False)
 
-
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 
@@ -62,10 +60,8 @@ class Account(AbstractBaseUser):
     def __str__(self):
         return self.email
 
-
     def has_perm(self, perm, obj=None):
         return self.is_admin
-
 
     def has_module_perms(self, add_label):
         return True

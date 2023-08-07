@@ -11,9 +11,7 @@ def index(request):
     return render(request, 'expenseapp/index.html')
 
 
-
-
-@login_required(login_url = 'signin')
+@login_required(login_url='signin')
 def home(request):
     if request.method == "POST": # when the request is post
         expense = ExpenseForm(request.POST)  # get data from ExpenseForm from post request
@@ -63,7 +61,7 @@ def home(request):
         'categorical_sums': categorical_sums, })
 
 
-@login_required(login_url = 'signin')
+@login_required(login_url='signin')
 def edit(request, id): # to render form to edit a paticular expense.
     expense = Expenses.objects.get(id=id)# store the id of a particular url id expense
     expense_form = ExpenseForm(instance=expense)# pass expence as an instance to form
@@ -80,7 +78,7 @@ def edit(request, id): # to render form to edit a paticular expense.
     {'expense_form': expense_form})
 
 
-@login_required(login_url = 'signin')
+@login_required(login_url='signin')
 def delete(request, id): # passing in id of item to be deleted
     if request.method == 'POST' and 'delete' in request.POST:
         expense = Expenses.objects.get(id=id)# get the expense id

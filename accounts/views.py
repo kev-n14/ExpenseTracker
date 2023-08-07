@@ -4,6 +4,7 @@ from .models import Account
 from django.contrib import messages, auth
 from django.contrib.auth.decorators import login_required
 
+
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
@@ -43,7 +44,7 @@ def signin(request):
     return render(request, 'accounts/signin.html')
 
 
-@login_required(login_url = 'signin')
+@login_required(login_url='signin')
 def logout(request):
     auth.logout(request)
     messages.success(request, 'You are logged out.')
