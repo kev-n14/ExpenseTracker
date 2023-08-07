@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 ##development = os.environ.get('DEVELOPMENT', False)
-DEBUG = development
+#DEBUG = development
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['kf-expense-tracker.herokuapp.com', 'localhost']
