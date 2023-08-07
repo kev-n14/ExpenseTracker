@@ -87,60 +87,93 @@ In the future, we hope to add:
 * **Epic| Site Introduction and User Account Management**
 
 1. As a First Time Visitor, I want to understand the main purpose of the site effortlessly.
-    - <p>The User is first presented with a brief text explaining the purpose of the website.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691391342/readme/user%20stories/landing_page_layout_teaq9u.png" alt="Landing Page Text" style="width:400px;"/>
 2. As a First Time Visitor, I want to be able to Sign up and create an account.
-    - <p>Users can gain navigate to the Sign Up page via the Sign Up button on the navbar or on the main section of the index page.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390785/readme/user%20stories/login-navbar_dzqdbx.png" alt="Navbar Sign Up Button" style="width:400px;"/>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390876/readme/user%20stories/sign_up_index_page_tfnrbr.png" alt="Index Page Sign Up Button" style="width:400px;"/>
 3. As a First Time Visitor, I want to be able to log in.
-    - <p>Users have the option to initiate the Sign In process either by selecting the "Sign In" button located on the navigation bar or by clicking the "Sign In" button prominently featured in the main section of the index page. Upon selection, users will be seamlessly directed to the dedicated Sign In Page. Here, they can conveniently input their credentials to successfully complete the sign-in procedure.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390785/readme/user%20stories/login-navbar_dzqdbx.png" alt="Navbar Sign In Button" style="width:400px;"/>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390820/readme/user%20stories/login_index_page_fl4peh.png" alt="Index Page Sign In Button" style="width:400px;"/>
 <hr>
 
 * **Epic| Summary and Management of Weekly Expenses**
 
 1. As a Returning Visitor, I want to get a summary of my expenses over a week.
- - <p></p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/Weekly_expenses_jjnk9t.png" alt="weekly expenses" style="width:400px;"/>
 2. As a Returning Visitor, I want to be able to Sign In to view my expenses and to be able to sign out.
- - <p>Once the USer is Signed in. They can view all their expenses.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/Expenses_q3xveb.png" alt="Expenses" style="width:400px;"/>
-
-- <p>The User can log out via the "Logout" Button.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/logout_italnn.png" alt="logout" style="width:400px;"/>
-
-3. As a Returning Visitor, I want to add expenses to my expenses list.
- - <p>Users can add expenses via the "Add Expenses" Section on the home page. By filling in the required fields and clicking the "ADD" Button.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/add_expenses_y5qypf.png" alt="Add Expenses" style="width:400px;"/>
+3. As a Returning Visitor, I want to add expenses to my expenses list.   
 <hr>
 
 * **Epic| Summary and Categorization of Monthly and Yearly Expenses**
 
 1. As a Frequent User, I want to get a summary of my expenses over a month or year.
- - <p>User can view thier expenses from the past 30 days.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393856/readme/user%20stories/past_30_days_rdxeg0.png" alt="monthly expenses" style="width:400px;"/>
-     - <p>User can view thier expenses from the past year.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691394023/readme/user%20stories/yearly_expenses_uryykr.png" alt="monthly expenses" style="width:400px;"/>
 2. As a Frequent User, I want to be able to categorize my expenses.
- - <p>The User can view a brekdown of their expenses by category.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691394170/readme/user%20stories/categorize_expenses_n2ltjt.png" alt="Category expenses" style="width:400px;"/>
-    
-
 <hr>
 
 * **Epic| Visualization of Expenses Data**
 
 1. As a Frequent User, I want to be able to view my expenses via bar and pie charts.
- - <p>A chart illustraion of the user's expenses.</p>
-    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691394390/readme/user%20stories/expenses_chart_rna826.png" alt="" style="width:400px;"/>
 <hr>
+
+### Testing User Stories from the User Experience (UX) Section
+#### **First Time Visitor Goals| Site Introduction and User Account Management**
+1. As a First Time Visitor, I want to be able to understand the main purpose of this site. I should be to determine the aim of the site effortlessly and in a short period.
+
+    * Upon visiting the site, users are greeted with a clean, spacious, colorful, and easily read navigation bar and landing page.
+    * The main points of the webpage are made immediately with the landing page hero image and text.
+
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691391342/readme/user%20stories/landing_page_layout_teaq9u.png" alt="Landing Page Text" style="width:400px;"/>
+1. As a First Time Visitor, I want to be able to Sign up and create an account.
+
+    * On the landing page the user is invited to become a member by a message on the navigation bar.
+    * In the navigation bar the user will find a Sign-Up Button.
+    * From this button a user will be brought to the sign-up page. 
+    * The user will be asked to fill in information - username, email, password, and re-enter the password.
+
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691391217/readme/user%20stories/navbar_sign_up_button_pvi3t7.png" alt="Navbar Sign Up Button" style="width:400px;"/>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390876/readme/user%20stories/sign_up_index_page_tfnrbr.png" alt="Index Page Sign Up Button" style="width:400px;"/>
+
+1. As a First Time Visitor,  I want to be to log in.
+
+    * From the Landing Page the user can access the login page via the login button in the navigation bar or the hero image button.
+    * Upon clicking on the Login button the user is transferred to the login page.
+    * The user will be asked to fill in username and password credentials to gain access to the home page.
+
+     <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390785/readme/user%20stories/login-navbar_dzqdbx.png" alt="Navbar Sign In Button" style="width:400px;"/>
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691390820/readme/user%20stories/login_index_page_fl4peh.png" alt="Index Page Sign In Button" style="width:400px;"/>
+#### **Returning Visitor Goals| Summary and Categorization of Monthly and Yearly Expenses**
+1. As a Returning Visitor, I want to be able to get a summary of my expenses over a week.
+    *  Below the user's expenses list, the user can view total expenses from the last 7 days.
+
+ <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/Weekly_expenses_jjnk9t.png" alt="weekly expenses" style="width:400px;"/>
+
+1. As a Returning Visitor, I want to be able to Sign In to view my expenses and to be able to sign out.
+    * From the Landing Page the user can access the login page via the login button in the navigation bar or the hero image button.
+    * Upon clicking on the Login button the user is transferred to the login page.
+    * From the navigation bar the user can find the logout button.
+    * upon clicking on the button the user will be brought to the sign-out webpage where the user is asked if they are sure they want to log out.
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/Expenses_q3xveb.png" alt="Expenses" style="width:400px;"/>
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/logout_italnn.png" alt="Expenses" style="width:400px;"/>
+1. As a Returning Visitor, I want to add expenses to my expenses list.
+    * from the home page the user can add expenses by filling out the fields required - Expenses Name, Amount, Category
+<img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393159/readme/user%20stories/add_expenses_y5qypf.png" alt="Add Expenses" style="width:400px;"/>
+
+#### **Frequent User Goals| Visualization of Expenses Data**
+1. As a Frequent User, I want to be able to get a summary of my expenses over a month, or year.
+    * Below the user's expenses list, the user can view total expenses from the last 30 days and the last 365 Days.
+
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691393856/readme/user%20stories/past_30_days_rdxeg0.png" alt="monthly expenses" style="width:400px;"/>
+
+2. As a Frequent User, I want to be able to categorize my expenses.
+    * Below the user's expenses list, all expenses are broken down into Categorical Expenses with the total of each category.
+
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691394170/readme/user%20stories/categorize_expenses_n2ltjt.png" alt="Category expenses" style="width:400px;"/>
+
+3. As a Frequent User, I want to be able to view my expenses via bar, and pie charts.
+    * At the bottom of the page the users can view a bar chart with a breakdown of all expenses.
+    
+    <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691394390/readme/user%20stories/expenses_chart_rna826.png" alt="" style="width:400px;"/>
 
 ## Mapping User Stories
  <img src="https://res.cloudinary.com/dlulkctls/image/upload/v1691397261/readme/user%20stories/Mapping_t27rgj.png" alt="" style="width:900px;"/>
 
 <hr>
+
+
 
 * ## **Design**
     * **Colour Scheme**
@@ -279,7 +312,6 @@ The W3C Markup Validator, W3C jigsaw CSS Validator, and PEP8 Code Institute vali
 1. Edit Page - Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
 1. Login Page - Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
 1. Sign Up - Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
-1. Sign Out- Document checking completed. No errors or warnings to show.[W3C validator](https://validator.w3.org/)
 ![HTML Validator ](https://res.cloudinary.com/dlulkctls/image/upload/v1681694121/readme/lighthouse/html-validator_w5hykb.png)
 * **CSS**
 No errors were found when passing through the official [(Jigsaw) validator](https://validator.w3.org/nu/#textarea)
@@ -291,49 +323,7 @@ No errors were found when passing through the official [(Jigsaw) validator](http
 * **Javascript**
 * [JSHint] (https://jshint.com/)
     * No Errors Detected
-### Testing User Stories from the User Experience (UX) Section
-#### **First Time Visitor Goals**
-1. As a First Time Visitor, I want to be able to understand the main purpose of this site. I should be to determine the aim of the site effortlessly and in a short period.
 
-    * Upon visiting the site, users are greeted with a clean, spacious, colorful, and easily read navigation bar and landing page.
-    * The main points of the webpage are made immediately with the landing page hero image and text.
-
-1. As a First Time Visitor, I want to be able to Sign up and create an account.
-
-    * On the landing page the user is invited to become a member by a message on the navigation bar.
-    * In the navigation bar the user will find a Sign-Up Button.
-    * From this button a user will be brought to the sign-up page. 
-    * The user will be asked to fill in information - username, email, password, and re-enter the password.
-
-1. As a First Time Visitor,  I want to be to log in.
-
-    * From the Landing Page the user can access the login page via the login button in the navigation bar or the hero image button.
-    * Upon clicking on the Login button the user is transferred to the login page.
-    * The user will be asked to fill in username and password credentials to gain access to the home page.
-    
-#### **Returning Visitor Goals**
-1. As a Returning Visitor, I want to be able to get a summary of my expenses over a week.
-    *  Below the user's expenses list, the user can view total expenses from the last 7 days.
-
-1. As a Returning Visitor, I want to be able to Sign In to view my expenses and to be able to sign out.
-    * From the Landing Page the user can access the login page via the login button in the navigation bar or the hero image button.
-    * Upon clicking on the Login button the user is transferred to the login page.
-    * From the navigation bar the user can find the logout button.
-    * upon clicking on the button the user will be brought to the sign-out webpage where the user is asked if they are sure they want to log out.
-
-
-1. As a Returning Visitor, I want to add expenses to my expenses list.
-    * from the home page the user can add expenses by filling out the fields required - Expenses Name, Amount, Category
-
-#### **Frequent User Goals**
-1. As a Frequent User, I want to be able to get a summary of my expenses over a month, or year.
-    * Below the user's expenses list, the user can view total expenses from the last 30 days and the last 365 Days.
-
-2. As a Frequent User, I want to be able to categorize my expenses.
-    * Below the user's expenses list, all expenses are broken down into Categorical Expenses with the total of each category.
-
-3. As a Frequent User, I want to be able to view my expenses via bar, and pie charts.
-    * At the bottom of the page the users can view a bar chart with a breakdown of all expenses.
  
 ## Performance
 ---
